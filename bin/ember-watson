@@ -1,9 +1,18 @@
 #!/usr/bin/env node
 
 var program = require('commander');
-var watson = require('../index');
+var Watson = require('../index');
+var watson = new Watson();
 
 program
   .version('0.0.1')
-  .option('-q, --fix-qunit', 'Fix QUnit files to match new syntax')
-  .parse(process.argv);
+
+program
+  .command('upgrade-qunit-tests [testsPath]')
+  .description('Fix QUnit tests to match 2.0 syntax. testsPath defaults to tests/')
+  .action(function(testsPath){
+    testsPath = testsPath || 'tests';
+    watson.transformQUnitTest(testsPath)
+  });
+
+program.parse(process.argv);
