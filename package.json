@@ -1,0 +1,23 @@
+{
+  "name": "ember-watson",
+  "version": "0.0.1",
+  "description": "Kind of an ember doctor.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha tests/**/*-test.js"
+  },
+  "keywords": [
+    "ember"
+  ],
+  "author": "Adolfo Builes",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^2.6.0",
+    "recast": "^0.9.17",
+    "walk-sync": "^0.1.3"
+  },
+  "devDependencies": {
+    "esprima-ast-equality": "0.0.4",
+    "mocha": "^2.1.0"
+  }
+}
