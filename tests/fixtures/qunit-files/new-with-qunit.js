@@ -19,7 +19,7 @@ test('Creating a new friends', function(assert) {
   visit('/friends/new');
   click('a[href=/friends/new]');
   andThen(function() {
-    equal(currentPath(), 'friends.new');
+    assert.equal(currentPath(), 'friends.new');
   });
   fillIn('input[placeholder=First Name]', 'Johnny');
   fillIn('input[placeholder=Last Name]', 'Foo');
@@ -27,22 +27,22 @@ test('Creating a new friends', function(assert) {
   fillIn('input[placeholder=twitter]', 'jcash');
   click('input[value=Save]');
   andThen(function() {
-    equal(find('.error-message').text(), 'Friend was not saved', 'shows error');
+    assert.equal(find('.error-message').text(), 'Friend was not saved', 'shows error');
   });
 
-  async(1);
-  deepEqual(1);
-  equal(1);
-  expect(1);
-  notDeepEqual(1);
-  notEqual(1);
-  notPropEqual(1);
-  notStrictEqual(1);
-  ok(1);
-  propEqual(1);
-  push(1);
-  strictEqual(1);
-  throws(1);
+  assert.async(1);
+  assert.deepEqual(1);
+  assert.equal(1);
+  assert.expect(1);
+  assert.notDeepEqual(1);
+  assert.notEqual(1);
+  assert.notPropEqual(1);
+  assert.notStrictEqual(1);
+  assert.ok(1);
+  assert.propEqual(1);
+  assert.push(1);
+  assert.strictEqual(1);
+  assert.throws(1);
 });
 
 module('Acceptance: FooBar', {
