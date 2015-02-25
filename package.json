@@ -1,14 +1,14 @@
 {
   "name": "ember-watson",
   "version": "0.0.1",
-  "description": "Kind of an ember doctor.",
+  "description": "A young Ember Doctor to help you fix your code.",
   "main": "index.js",
   "scripts": {
     "test": "mocha tests/**/*-test.js",
     "ci": "mocha tests/**/*-test.js"
   },
   "keywords": [
-    "ember"
+    "ember-addon"
   ],
   "author": "Adolfo Builes",
   "license": "MIT",
@@ -22,5 +22,19 @@
     "esprima-ast-equality": "0.0.4",
     "mocha": "^2.1.0",
     "mocha-jshint": "0.0.9"
+  },
+  "directories": {
+    "test": "tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/abuiles/ember-watson.git"
+  },
+  "bugs": {
+    "url": "https://github.com/abuiles/ember-watson/issues"
+  },
+  "homepage": "https://github.com/abuiles/ember-watson",
+  "ember-addon": {
+    "main": "ember-addon.js"
   }
 }

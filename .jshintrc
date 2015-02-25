@@ -1,5 +1,6 @@
 {
   "predef": [
     "require"
-  ]
+  ],
+  "node": true
 }
