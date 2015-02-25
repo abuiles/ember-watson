@@ -4,7 +4,8 @@
   "description": "Kind of an ember doctor.",
   "main": "index.js",
   "scripts": {
-    "test": "mocha tests/**/*-test.js"
+    "test": "mocha tests/**/*-test.js",
+    "ci": "mocha tests/**/*-test.js"
   },
   "keywords": [
     "ember"
