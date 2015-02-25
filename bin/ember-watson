@@ -1,0 +1,9 @@
+#!/usr/bin/env node
+
+var program = require('commander');
+var watson = require('../index');
+
+program
+  .version('0.0.1')
+  .option('-q, --fix-qunit', 'Fix QUnit files to match new syntax')
+  .parse(process.argv);
