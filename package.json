@@ -13,6 +13,7 @@
   "author": "Adolfo Builes",
   "license": "MIT",
   "dependencies": {
+    "chalk": "^1.0.0",
     "commander": "^2.6.0",
     "recast": "^0.9.17",
     "walk-sync": "^0.1.3"
