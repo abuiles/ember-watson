@@ -29,4 +29,12 @@ describe('Qunit tests only with qunit', function() {
 
     astEquality(newSource, fs.readFileSync('./tests/fixtures/qunit-files/new-with-qunit-and-skip.js'));
   });
+
+  it('does not change the file if it is correct', function() {
+    var source = fs.readFileSync('./tests/fixtures/qunit-files/new-with-qunit.js');
+    var watson = new Watson();
+    var newSource = watson._transformQUnitTest(source);
+
+    astEquality(newSource, fs.readFileSync('./tests/fixtures/qunit-files/new-with-qunit.js'));
+  });
 });
