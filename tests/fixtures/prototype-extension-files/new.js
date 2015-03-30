@@ -27,5 +27,9 @@ export default Ember.Controller.extend({
 
   chainedObserver: Ember.observer('foo', 'bar', function(property) {
     this.set('baz', true);
-  }).on('init')
+  }).on('init'),
+
+  funkyProperty: Ember.computed(...KEYS, function() {
+
+  })
 });

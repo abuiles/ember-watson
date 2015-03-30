@@ -1,5 +1,7 @@
 import Ember from 'ember';
 
+var KEYS = ['firstName', 'lastName'];
+
 export default Ember.Controller.extend({
   hasNoDependency: function() {
     return true;
@@ -27,5 +29,9 @@ export default Ember.Controller.extend({
 
   chainedObserver: function(property) {
     this.set('baz', true);
-  }.observes('foo', 'bar').on('init')
+  }.observes('foo', 'bar').on('init'),
+
+  funkyProperty: function() {
+
+  }.property(...KEYS)
 });
