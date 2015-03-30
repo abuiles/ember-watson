@@ -29,7 +29,17 @@ The following are some of the changes:
   -  Import `skip` if used in tests: `import { module,test, skip } from 'qunit'`
   - Add assert to callback function in `test`.
   - Use `assert` inside test, e.g. `ok` becomes `assert.ok`.
-  - Use `beforeEach` and `afterEach` instead of `setup` and `teardown` inside module.
+  - Use `beforeEach` and `afterEach` instead of `setup` and `teardown`
+    inside module.
+
+#### `ember convert-prototype-extensions`
+
+Convert computed properties and observers to not use prototype
+extensions. You can specify `appPath` (defaults to `app/`) in case you
+want to convert code somewhere different to `app/`.
+
+For more info about this please refer to the following PR [Encourage decorator-style Ember.computed/Ember.observer](https://github.com/emberjs/guides/pull/110)
+
 
 ## Using without ember CLI
 
@@ -42,6 +52,8 @@ install -g ember-watson`
 
 This command will transverse your tests directory fixing your QUnit
 test to use the 2.0 compatible output.
+
+#### `ember-watson convert-prototype-extensions`
 
 ## License
 
