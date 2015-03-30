@@ -5,7 +5,7 @@ var Watson = require('../index');
 var watson = new Watson();
 
 program
-  .version('0.0.1')
+  .version('0.0.2')
 
 program
   .command('upgrade-qunit-tests [testsPath]')
@@ -13,6 +13,14 @@ program
   .action(function(testsPath){
     testsPath = testsPath || 'tests';
     watson.transformQUnitTest(testsPath)
+  });
+
+program
+  .command('convert-prototype-extensions [appPath]')
+  .description('Convert computed properties and observers to not use prototype extensions. appPath defaults to app/')
+  .action(function(appPath){
+    appPath = appPath || 'app';
+    watson.transformPrototypeExtensions(appPath)
   });
 
 program.parse(process.argv);
