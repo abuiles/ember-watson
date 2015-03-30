@@ -7,6 +7,9 @@
     "test": "mocha tests/**/*-test.js",
     "ci": "mocha tests/**/*-test.js"
   },
+  "bin": {
+    "ember-watson": "./bin/ember-watson"
+  },
   "keywords": [
     "ember-addon"
   ],
