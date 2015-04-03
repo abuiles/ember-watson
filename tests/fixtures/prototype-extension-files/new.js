@@ -25,9 +25,9 @@ export default Ember.Controller.extend({
     this.set('bar', true);
   }),
 
-  chainedObserver: Ember.observer('foo', 'bar', function(property) {
+  chainedObserver: Ember.on('init', Ember.observer('foo', 'bar', function(property) {
     this.set('baz', true);
-  }).on('init'),
+  })),
 
   onInit: Ember.on('init', function() {
     this.set('foobar', true);
