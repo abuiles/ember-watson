@@ -7,8 +7,9 @@ var App;
 var server;
 
 module('Acceptance: FriendsNew', {
-  beforeEach: function() {
+  beforeEach: function(assert) {
     App = startApp();
+    assert.ok(true, 'app started');
   },
   afterEach: function() {
     Ember.run(App, 'destroy');

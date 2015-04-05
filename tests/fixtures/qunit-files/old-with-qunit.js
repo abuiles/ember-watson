@@ -8,6 +8,7 @@ var server;
 module('Acceptance: FriendsNew', {
   setup: function() {
     App = startApp();
+    ok(true, 'app started');
   },
   teardown: function() {
     Ember.run(App, 'destroy');
