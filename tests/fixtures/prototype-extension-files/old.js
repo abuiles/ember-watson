@@ -27,5 +27,9 @@ export default Ember.Controller.extend({
 
   chainedObserver: function(property) {
     this.set('baz', true);
-  }.observes('foo', 'bar').on('init')
+  }.observes('foo', 'bar').on('init'),
+
+  onInit: function() {
+    this.set('foobar', true);
+  }.on('init')
 });
