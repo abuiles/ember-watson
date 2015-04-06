@@ -4,7 +4,7 @@ var Watson = require('../../index');
 var watson = new Watson();
 
 module.exports = {
-  name: 'upgrade-qunit-tests',
+  name: 'watson:upgrade-qunit-tests',
   description: 'Fix QUnit tests to match 2.0 syntax.',
   works: 'insideProject',
 

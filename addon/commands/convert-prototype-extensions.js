@@ -4,7 +4,7 @@ var Watson = require('../../index');
 var watson = new Watson();
 
 module.exports = {
-  name: 'convert-prototype-extensions',
+  name: 'watson:convert-prototype-extensions',
   description: 'Convert computed properties and observers to not use prototype extensions.',
   works: 'insideProject',
   availableOptions: [
