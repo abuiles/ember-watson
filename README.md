@@ -1,21 +1,19 @@
 ## ember-watson  [![Build Status](https://travis-ci.org/abuiles/ember-watson.png?branch=master)](https://travis-ci.org/abuiles/ember-watson)
 
-A young Ember Doctor. Currently I can only upgrade your QUnit test so
-you don't have to do it manually.
-
+A young Ember Doctor.
 
 ## Using as an ember CLI addon
 
 `ember-watson` can be used as an `ember CLI addon`, it will extend the
 available list of commands.
 
-To install, run `npm install ember-watson --save-dev` and you are good
+To install, run `npm install ember-watson@latest --save-dev` and you are good
 to go.
 
 
 ### Commands
 
-#### `ember upgrade-qunit-tests`
+#### `ember watson:upgrade-qunit-tests`
 
 This command will transverse your tests directory fixing your QUnit
 test to use the 2.0 compatible output (see
@@ -32,7 +30,7 @@ The following are some of the changes:
   - Use `beforeEach` and `afterEach` instead of `setup` and `teardown`
     inside module.
 
-#### `ember convert-prototype-extensions`
+#### `ember watson:convert-prototype-extensions`
 
 Convert computed properties and observers to not use prototype
 extensions. You can specify `appPath` (defaults to `app/`) in case you
