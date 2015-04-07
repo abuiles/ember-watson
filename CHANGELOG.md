@@ -1,5 +1,13 @@
 # ember-watson Changelog
 
+### 0.3.1
+
+A bug was introduced in `0.3.0` causing `import Ember from 'ember'` to
+be included in any JavaScript file independently if prototype
+extensions were used or not. This release fixes the issue so the
+import declaration is only included if prototype extensions are
+detected.
+
 ### 0.3.0
 
 This release include  some improvements to existing transformations
