@@ -19,4 +19,12 @@ describe('computed properties, observers and event observers extending prototype
 
     astEquality(newSource, fs.readFileSync('./tests/fixtures/prototype-extension-files/new-with-ember.js'));
   });
+
+  it('includes Ember only if transformations are made', function() {
+    var source = fs.readFileSync('./tests/fixtures/prototype-extension-files/simple.js');
+    var watson = new Watson();
+    var newSource = watson._transformPrototypeExtensions(source);
+
+    astEquality(newSource, fs.readFileSync('./tests/fixtures/prototype-extension-files/simple.js'));
+  });
 });
