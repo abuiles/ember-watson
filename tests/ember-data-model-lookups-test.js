@@ -28,9 +28,9 @@ describe('ember data model lookups', function(){
     describe('when using the object form', function(){
 
       it('migrates to a dasherized string', function(){
-        var source         = fs.readFileSync(baseDir + '/app-global-old.js');
-        var newSource      = watson._transformEmberDataModelLookups(source);
-        var expectedSource = fs.readFileSync(baseDir + '/app-global-new.js');
+        var source            = fs.readFileSync(baseDir + '/app-global-old.js');
+        var newSource         = watson._transformEmberDataModelLookups(source);
+        var expectedNewSource = fs.readFileSync(baseDir + '/app-global-new.js');
 
         astEquality(newSource, expectedNewSource);
       });
