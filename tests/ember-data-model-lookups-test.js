@@ -36,6 +36,15 @@ describe('ember data model lookups', function(){
       });
     });
 
+    describe('when using a variable', function(){
+      it('migrates to a dasherized string', function(){
+        var source            = fs.readFileSync(baseDir + '/variable-old.js');
+        var newSource         = watson._transformEmberDataModelLookups(source);
+        var expectedNewSource = fs.readFileSync(baseDir + '/variable-new.js');
+
+        astEquality(newSource, expectedNewSource);
+      });
+    });
   });
 
 });
