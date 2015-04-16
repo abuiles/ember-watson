@@ -47,5 +47,41 @@ describe('ember data model lookups', function(){
     });
   });
 
+  describe('belongsTo relationship macro', function(){
+
+    describe('when using the string form', function(){
+
+      it('migrates to a dasherized string', function(){
+        var source            = fs.readFileSync(baseDir + '/belongs-to-string-old.js');
+        var newSource         = watson._transformEmberDataModelLookups(source);
+        var expectedNewSource = fs.readFileSync(baseDir + '/belongs-to-string-new.js');
+
+        astEquality(newSource, expectedNewSource);
+      });
+    });
+
+    describe('when using the variable form', function(){
+
+      it('migrates to a dasherized string', function(){
+        var source            = fs.readFileSync(baseDir + '/belongs-to-variable-old.js');
+        var newSource         = watson._transformEmberDataModelLookups(source);
+        var expectedNewSource = fs.readFileSync(baseDir + '/belongs-to-variable-new.js');
+
+        astEquality(newSource, expectedNewSource);
+      });
+    });
+
+    describe('when using the MemberExpression form', function(){
+
+      it('migrates to a dasherized string', function(){
+        var source            = fs.readFileSync(baseDir + '/belongs-to-member-expression-old.js');
+        var newSource         = watson._transformEmberDataModelLookups(source);
+        var expectedNewSource = fs.readFileSync(baseDir + '/belongs-to-member-expression-new.js');
+
+        astEquality(newSource, expectedNewSource);
+      });
+    });
+  });
+
 });
 
