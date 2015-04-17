@@ -23,4 +23,13 @@ program
     watson.transformPrototypeExtensions(appPath)
   });
 
+program
+  .command('convert-ember-data-model-lookups [appPath]')
+  .command('convert Ember Data model lookups to use a dasherized string')
+  .action(function(appPath) {
+    appPath = appPath || 'app';
+    watson.transformEmberDataModelLookups(appPath);
+  });
+
+
 program.parse(process.argv);

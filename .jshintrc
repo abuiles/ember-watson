@@ -1,6 +1,9 @@
 {
   "predef": [
-    "require"
+    "require",
+    "describe",
+    "beforeEach",
+    "it"
   ],
   "node": true
 }

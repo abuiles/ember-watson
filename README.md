@@ -38,6 +38,37 @@ want to convert code somewhere different to `app/`.
 
 For more info about this please refer to the following PR [Encourage decorator-style Ember.computed/Ember.observer](https://github.com/emberjs/guides/pull/110)
 
+#### `ember watson:convert-ember-data-model-lookups`
+
+This changes the way model lookups happen when working with Ember
+Data. When using `hasMany` or `belongsTo`, the first argument will
+become a camelized string. Here's some examples:
+
+```javascript
+
+// before, using a camelCase string
+
+export default DS.Model.extend({
+  postComments: DS.hasMany('postComment', {async: true})
+});
+
+// after
+
+export default DS.Model.extend({
+  postComments: DS.hasMany('post-comment', {async: true})
+});
+
+// before, using an variable or looking up on App.
+export default DS.Model.extend({
+  postComments: DS.hasMany(PostComment, {async: true})
+});
+
+// after
+
+export default DS.Model.extend({
+  postComments: DS.hasMany('post-comment', {async: true})
+});
+```
 
 ## Using without ember CLI
 
