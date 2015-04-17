@@ -1,5 +1,33 @@
 # ember-watson Changelog
 
+### 0.4.0
+
+This version includes a new command which normalizes how you reference
+models in `belongsTo` and `hasMany` relationships to their dasherized
+from. Looking up via camelCase, variable, or App.Post will be removed
+for Ember Data 1.0,
+
+Running `ember watson:convert-ember-data-model-lookups` will transform
+models looking like the following:
+
+```
+export default DS.Model.extend({
+  postComments: DS.hasMany('postComment', {async: true})
+});
+
+```
+
+To:
+
+```
+export default DS.Model.extend({
+  postComments: DS.hasMany('post-comment', {async: true})
+});
+```
+
+Big thanks to [Stanley Stuart](https://github.com/fivetanley) for his
+work on this command.
+
 ### 0.3.1
 
 A bug was introduced in `0.3.0` causing `import Ember from 'ember'` to
