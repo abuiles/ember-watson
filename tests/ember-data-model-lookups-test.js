@@ -45,6 +45,17 @@ describe('ember data model lookups', function(){
         astEquality(newSource, expectedNewSource);
       });
     });
+
+    describe('when hasMany itself is a variable', function(){
+
+      it('migrates to a dasherized string', function(){
+        var source            = fs.readFileSync(baseDir + '/has-many-function-variable-old.js');
+        var newSource         = watson._transformEmberDataModelLookups(source);
+        var expectedNewSource = fs.readFileSync(baseDir + '/has-many-function-variable-new.js');
+
+        astEquality(newSource, expectedNewSource);
+      });
+    });
   });
 
   describe('belongsTo relationship macro', function(){
@@ -77,6 +88,17 @@ describe('ember data model lookups', function(){
         var source            = fs.readFileSync(baseDir + '/belongs-to-member-expression-old.js');
         var newSource         = watson._transformEmberDataModelLookups(source);
         var expectedNewSource = fs.readFileSync(baseDir + '/belongs-to-member-expression-new.js');
+
+        astEquality(newSource, expectedNewSource);
+      });
+    });
+
+    describe('when belongsTo itself is a variable', function(){
+
+      it('migrates to a dasherized string', function(){
+        var source            = fs.readFileSync(baseDir + '/belongs-to-function-variable-old.js');
+        var newSource         = watson._transformEmberDataModelLookups(source);
+        var expectedNewSource = fs.readFileSync(baseDir + '/belongs-to-function-variable-new.js');
 
         astEquality(newSource, expectedNewSource);
       });
