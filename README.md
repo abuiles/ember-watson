@@ -49,7 +49,7 @@ become a camelized string. Here's some examples:
 // before, using a camelCase string
 
 export default DS.Model.extend({
-  postComments: DS.hasMany('post-comment', {async: true})
+  postComments: DS.hasMany('postComment', {async: true})
 });
 
 // after
