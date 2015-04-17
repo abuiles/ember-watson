@@ -17,9 +17,9 @@ describe('ember data model lookups', function(){
 
     describe('when using the string form', function(){
       it('migrates to dasherized', function(){
-        var source            = fs.readFileSync(baseDir + '/old.js');
+        var source            = fs.readFileSync(baseDir + '/has-many-string-old.js');
         var newSource         = watson._transformEmberDataModelLookups(source);
-        var expectedNewSource = fs.readFileSync(baseDir + '/new.js');
+        var expectedNewSource = fs.readFileSync(baseDir + '/has-many-string-new.js');
 
         astEquality(newSource, expectedNewSource);
       });
@@ -38,9 +38,9 @@ describe('ember data model lookups', function(){
 
     describe('when using a variable', function(){
       it('migrates to a dasherized string', function(){
-        var source            = fs.readFileSync(baseDir + '/variable-old.js');
+        var source            = fs.readFileSync(baseDir + '/has-many-variable-old.js');
         var newSource         = watson._transformEmberDataModelLookups(source);
-        var expectedNewSource = fs.readFileSync(baseDir + '/variable-new.js');
+        var expectedNewSource = fs.readFileSync(baseDir + '/has-many-variable-new.js');
 
         astEquality(newSource, expectedNewSource);
       });
