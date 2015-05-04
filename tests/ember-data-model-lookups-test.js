@@ -13,6 +13,16 @@ describe('ember data model lookups', function(){
     watson = new Watson();
   });
 
+  describe('store methods', function(){
+    it('migrates to a string', function(){
+      var source            = fs.readFileSync(baseDir + '/route-old.js');
+      var newSource         = watson._transformEmberDataModelLookups(source);
+      var expectedNewSource = fs.readFileSync(baseDir + '/route-new.js');
+
+      astEquality(newSource, expectedNewSource);
+    });
+  });
+
   describe('hasMany relationship macro', function(){
 
     describe('when using the string form', function(){
