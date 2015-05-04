@@ -1,5 +1,15 @@
 # ember-watson Changelog
 
+### 0.4.2
+
+Improves command `ember watson:convert-ember-data-model-lookups`
+adding the ability to change store methods like findAll, find,
+findQuery, all, etc to use the string form.
+
+See the transformations on the file
+[route-old.js](https://github.com/abuiles/ember-watson/blob/4e1ec53e73f2cf017a21d493519b77f7f025660f/tests/fixtures/ember-data-model-lookups/route-old.js)
+on [route-new.js](https://github.com/abuiles/ember-watson/blob/4e1ec53e73f2cf017a21d493519b77f7f025660f/tests/fixtures/ember-data-model-lookups/route-new.js).
+
 ### 0.4.0
 
 This version includes a new command which normalizes how you reference
