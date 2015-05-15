@@ -70,6 +70,19 @@ export default DS.Model.extend({
 });
 ```
 
+### Specifying a file or path.
+
+You can run any of the commands passing as argument the path, file or
+regular expression of the files that you want to transform.
+
+```
+ember watson:upgrade-qunit-tests tests/unit*
+ember watson:upgrade-qunit-tests tests/unit/model-test.js
+ember watson:upgrade-qunit-tests tests
+```
+
+The same is possible with `ember watson:convert-prototype-extensions` and `ember watson:convert-ember-data-model-lookups`.
+
 ## Using without ember CLI
 
 `ember-watson` can be used without `ember CLI` too, just do `npm

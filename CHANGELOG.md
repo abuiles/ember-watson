@@ -1,5 +1,21 @@
 # ember-watson Changelog
 
+### 0.5.0
+
+This release allows commands to take single files, additionally it
+modifies the way in which the path is specified.
+
+You can run any of the commands passing as argument the path, file or regular expression of the files that you want to transform.
+
+```
+ember watson:upgrade-qunit-tests tests/unit*
+ember watson:upgrade-qunit-tests tests/unit/model-test.js
+ember watson:upgrade-qunit-tests tests
+```
+
+The same is possible with `ember watson:convert-prototype-extensions` and `ember watson:convert-ember-data-model-lookups`.
+
+
 ### 0.4.2
 
 Improves command `ember watson:convert-ember-data-model-lookups`
