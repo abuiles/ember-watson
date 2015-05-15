@@ -7,15 +7,11 @@ module.exports = {
   name: 'watson:convert-prototype-extensions',
   description: 'Convert computed properties and observers to not use prototype extensions.',
   works: 'insideProject',
-  availableOptions: [
-    {
-      name: 'app-path',
-      type: String,
-      default: 'app'
-    }
+  anonymousOptions: [
+    '<path>'
   ],
-
   run: function(commandOptions, rawArgs) {
-    watson.transformPrototypeExtensions(commandOptions.appPath);
+    var path = rawArgs[0] ||  'app';
+    watson.transformPrototypeExtensions(path);
   }
 };
