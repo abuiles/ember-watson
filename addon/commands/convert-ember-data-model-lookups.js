@@ -1,23 +1,18 @@
 'use strict';
 
-module.exports = {
+var Watson = require('../../index');
+var watson = new Watson();
 
+module.exports = {
   name: 'watson:convert-ember-data-model-lookups',
   description: 'convert ember data model lookups to use a dasherized string',
   works: 'insideProject',
-  availableOptions: [
-    {
-      name: 'app-path',
-      type: String,
-      default: 'app'
-    }
+  anonymousOptions: [
+    '<path>'
   ],
-
   run: function(commandOptions, rawArgs) {
-    var Watson = require('../../index');
-    var watson = new Watson();
+    var path = rawArgs[0] ||  'app';
 
     watson.transformEmberDataModelLookups(commandOptions.appPath);
   }
-
 };
