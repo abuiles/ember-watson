@@ -1,0 +1,24 @@
+import DS from 'ember-data';
+
+const {belongsTo} = DS;
+
+var Post = DS.Model.extend({
+  comments: DS.belongsTo('post-comments', {async: true}),
+  images: belongsTo('images', {async: true}),
+  pingbacks: DS.belongsTo('pingbacks', {
+    async: false
+  }),
+  links: belongsTo('links', {
+    async: false
+  }),
+  subposts: DS.belongsTo('posts', {
+    polymorphic: true,
+    async: false
+  }),
+  variables: belongsTo('variables', {
+    polymorphic: true,
+    async: false
+  }),
+});
+
+export default Post;
