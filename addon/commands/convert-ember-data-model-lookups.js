@@ -5,7 +5,7 @@ var watson = new Watson();
 
 module.exports = {
   name: 'watson:convert-ember-data-model-lookups',
-  description: 'convert ember data model lookups to use a dasherized string',
+  description: 'Convert ember data model lookups to use a dasherized string',
   works: 'insideProject',
   anonymousOptions: [
     '<path>'
