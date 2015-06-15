@@ -38,6 +38,11 @@ want to convert code somewhere different to `app/`.
 
 For more info about this please refer to the following PR [Encourage decorator-style Ember.computed/Ember.observer](https://github.com/emberjs/guides/pull/110)
 
+### `ember watson:convert-ember-data-async-false-relationships`
+
+Adds an explicit `async: false` options to all `belongsTo` and `hasMany` that
+either have no options or its options does not contain an explicit async value.
+
 #### `ember watson:convert-ember-data-model-lookups`
 
 This changes the way model lookups happen when working with Ember

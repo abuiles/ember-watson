@@ -31,4 +31,12 @@ program
     watson.transformEmberDataModelLookups(appPath);
   });
 
+program
+  .command('convert-ember-data-async-false-relationships [appPath]')
+  .description('convert Ember Data relationship with implicit async: false to explicit option')
+  .action(funtion(appPath) {
+    appPath = appPath || 'app';
+    watson.transformEmberDataAsyncFalseRelationships;
+  });
+
 program.parse(process.argv);
