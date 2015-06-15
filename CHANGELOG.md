@@ -1,5 +1,20 @@
 # ember-watson Changelog
 
+### 0.5.1
+
+This release includes a new command to help you add an explicit
+`async: false` options to all `belongsTo` and `hasMany` that either
+have no options or its options does not contain an explicit async
+value.
+
+```
+ember watson:convert-ember-data-async-false-relationships
+````
+
+By default relationships will be async in Ember-Data, see issue
+[#3220](https://github.com/emberjs/data/issues/3220) for more info.
+
+
 ### 0.5.0
 
 This release allows commands to take single files, additionally it
