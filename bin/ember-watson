@@ -36,7 +36,7 @@ program
   .description('convert Ember Data relationship with implicit async: false to explicit option')
   .action(function(appPath) {
     appPath = appPath || 'app';
-    watson.transformEmberDataAsyncFalseRelationships;
+    watson.transformEmberDataAsyncFalseRelationships(appPath);
   });
 
 program.parse(process.argv);
