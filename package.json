@@ -25,7 +25,8 @@
   "devDependencies": {
     "esprima-ast-equality": "0.0.4",
     "mocha": "^2.1.0",
-    "mocha-jshint": "0.0.9"
+    "mocha-jshint": "0.0.9",
+    "proxyquire": "^1.5.0"
   },
   "directories": {
     "test": "tests"
