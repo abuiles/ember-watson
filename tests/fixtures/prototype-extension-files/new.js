@@ -31,5 +31,15 @@ export default Ember.Controller.extend({
 
   onInit: Ember.on('init', function() {
     this.set('foobar', true);
-  })
+  }),
+
+  similarMethods: Ember.on('init', Ember.observer('name', function() {
+    $(document).on('click', function() {
+      console.log('someone clicked');
+    });
+    users.map(property('name'));
+    user.observes('name', function() {
+      console.log('Name changed');
+    });
+  }))
 });
