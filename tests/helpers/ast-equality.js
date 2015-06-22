@@ -25,8 +25,8 @@ module.exports = function(actual, expected, message) {
 
   if (!seemEqual) {
     throw new EqualityError(message || "AST equality failed",
-      parsedActual,
-      parsedExpected
+      recast.print(parsedActual).code,
+      recast.print(parsedExpected).code
     );
   }
 };
