@@ -1,5 +1,17 @@
 # ember-watson Changelog
 
+### 0.5.4
+
+Add tests and fixes issue [#31](https://github.com/abuiles/ember-watson/issues/31).
+
+### 0.5.3
+
+Fixed issue in bin command where path was not being passed.
+
+### 0.5.2
+
+Fixed typo in bin command.
+
 ### 0.5.1
 
 This release includes a new command to help you add an explicit
