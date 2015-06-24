@@ -3,6 +3,7 @@
     "require",
     "describe",
     "beforeEach",
+    "afterEach",
     "it"
   ],
   "node": true
