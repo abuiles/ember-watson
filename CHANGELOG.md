@@ -1,5 +1,9 @@
 # ember-watson Changelog
 
+### 0.5.5
+
+Fixes issue [#47](https://github.com/abuiles/ember-watson/issues/47).
+
 ### 0.5.4
 
 Add tests and fixes issue [#31](https://github.com/abuiles/ember-watson/issues/31).
