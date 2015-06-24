@@ -12,7 +12,6 @@ module.exports = {
   ],
   run: function(commandOptions, rawArgs) {
     var path = rawArgs[0] ||  'app';
-
-    watson.transformEmberDataModelLookups(commandOptions.appPath);
+    watson.transformEmberDataModelLookups(path);
   }
 };
