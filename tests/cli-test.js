@@ -19,6 +19,10 @@ var commands = {
   'convert-ember-data-async-false-relationships': {
     method: 'transformEmberDataAsyncFalseRelationships',
     path: 'app'
+  },
+  'convert-resource-router-mapping': {
+    method: 'transformResourceRouterMapping',
+    path: 'app/router.js'
   }
 };
 

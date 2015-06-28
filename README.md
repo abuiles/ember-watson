@@ -75,6 +75,10 @@ export default DS.Model.extend({
 });
 ```
 
+#### `ember watson:convert-resource-router-mapping <routerPath>`
+
+It takes the router path, by default `app/router.js`, and convert the deprecated `this.resource('user')` to `this.route('user', { resetNamespace: true })`. Also works for nested resources.
+
 ### Specifying a file or path.
 
 You can run any of the commands passing as argument the path, file or
