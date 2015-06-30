@@ -1,5 +1,9 @@
 # ember-watson Changelog
 
+### unreleased
+
+Created `convert-resource-router-mapping` command fixes [#50](https://github.com/abuiles/ember-watson/issues/50).
+
 ### 0.5.5
 
 Fixes issue [#47](https://github.com/abuiles/ember-watson/issues/47).
