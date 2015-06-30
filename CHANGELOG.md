@@ -1,8 +1,11 @@
 # ember-watson Changelog
 
-### unreleased
+### 0.5.6
 
-Created `convert-resource-router-mapping` command fixes [#50](https://github.com/abuiles/ember-watson/issues/50).
+Adds `convert-resource-router-mapping` which convert the deprecated
+`this.resource('user')` to `this.route('user', {resetNamespace: true
+})`. See [#50](https://github.com/abuiles/ember-watson/issues/50) for
+more info.
 
 ### 0.5.5
 

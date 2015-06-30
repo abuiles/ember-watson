@@ -1,6 +1,6 @@
 {
   "name": "ember-watson",
-  "version": "0.5.5",
+  "version": "0.5.6",
   "description": "A young Ember Doctor to help you fix your code.",
   "main": "index.js",
   "scripts": {
