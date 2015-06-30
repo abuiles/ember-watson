@@ -38,10 +38,12 @@ want to convert code somewhere different to `app/`.
 
 For more info about this please refer to the following PR [Encourage decorator-style Ember.computed/Ember.observer](https://github.com/emberjs/guides/pull/110)
 
-### `ember watson:convert-ember-data-async-false-relationships`
+#### `ember watson:convert-ember-data-async-false-relationships`
 
-Adds an explicit `async: false` options to all `belongsTo` and `hasMany` that
+In Ember Data 2.0 relationships will be asynchronous by default. Sync relationships will still be supported but you will need to manually opt into them by setting { async: false } on your relationships. This task adds an explicit `async: false` options to all `belongsTo` and `hasMany` that
 either have no options or its options does not contain an explicit async value.
+
+For more information, read [ember-data 1.13 release notes](http://emberjs.com/blog/2015/06/18/ember-data-1-13-released.html#toc_async-relationships)
 
 #### `ember watson:convert-ember-data-model-lookups`
 
