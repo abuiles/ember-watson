@@ -12,6 +12,6 @@ module.exports = {
   ],
   run: function(commandOptions, rawArgs) {
     var path = rawArgs[0] ||  'app/router.js';
-    watson.transformResourceRouteMapping(path);
+    watson.transformResourceRouterMapping(path);
   }
 };
