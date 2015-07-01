@@ -1,5 +1,9 @@
 # ember-watson Changelog
 
+### 0.5.7
+
+Fixes addon command `convert-resource-router-mapping`.
+
 ### 0.5.6
 
 Adds `convert-resource-router-mapping` which convert the deprecated
