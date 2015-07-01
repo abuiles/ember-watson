@@ -1,5 +1,10 @@
 # ember-watson Changelog
 
+### 0.5.8
+
+Extend `convert-resource-router-mapping` to transform `this.resources`
+defined inside `this.route`.
+
 ### 0.5.7
 
 Fixes addon command `convert-resource-router-mapping`.
