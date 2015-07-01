@@ -36,5 +36,13 @@ describe('Resource router mapping', function() {
 
       astEquality(newSource, expectedNewSource);
     });
+
+    it('transform complex ember-cli file format', function() {
+      var source            = fs.readFileSync(baseDir + '/old-complex-ember-cli-sample.js');
+      var newSource         = watson._transformResourceRouterMapping(source);
+      var expectedNewSource = fs.readFileSync(baseDir + '/new-complex-ember-cli-sample.js');
+
+      astEquality(newSource, expectedNewSource);
+    });
   });
 });
