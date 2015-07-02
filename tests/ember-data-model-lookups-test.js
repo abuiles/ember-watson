@@ -21,6 +21,14 @@ describe('ember data model lookups', function(){
 
       astEquality(newSource, expectedNewSource);
     });
+
+    it('does\'t transform member expressions passed as first argument', function(){
+      var source            = fs.readFileSync(baseDir + '/serializer-old.js');
+      var newSource         = watson._transformEmberDataModelLookups(source);
+      var expectedNewSource = fs.readFileSync(baseDir + '/serializer-new.js');
+
+      astEquality(newSource, expectedNewSource);
+    });
   });
 
   describe('hasMany relationship macro', function(){
