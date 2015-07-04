@@ -1,5 +1,10 @@
 # ember-watson Changelog
 
+### 0.5.9
+
+Improves `ember watson:convert-ember-data-model-lookups` do it doesn't
+transform member expressions passed as first parameter to store (see issue [#35](https://github.com/abuiles/ember-watson/issues/35)).
+
 ### 0.5.8
 
 Extend `convert-resource-router-mapping` to transform `this.resources`
