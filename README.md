@@ -49,7 +49,7 @@ For more information, read [ember-data 1.13 release notes](http://emberjs.com/bl
 
 This changes the way model lookups happen when working with Ember
 Data. When using `hasMany` or `belongsTo`, the first argument will
-become a camelized string. Here's some examples:
+become a dasherized string. Here's some examples:
 
 ```javascript
 
