@@ -11,9 +11,7 @@ module.exports = {
     '<path>'
   ],
   run: function(commandOptions, rawArgs) {
-    var paths = rawArgs || ['app', 'tests'];
-    for(var i = 0, len = paths.length; i < len; i++) {
-      watson.methodify(paths[i]);
-    }
+    var path = rawArgs || 'app';
+    watson.transformMethodify(path);
   }
 };

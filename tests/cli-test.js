@@ -20,6 +20,10 @@ var commands = {
     method: 'transformEmberDataAsyncFalseRelationships',
     path: 'app'
   },
+  'methodify': {
+    method: 'transformMethodify',
+    path: 'app'
+  },
   'convert-resource-router-mapping': {
     method: 'transformResourceRouterMapping',
     path: 'app/router.js'
