@@ -15,7 +15,7 @@ to go.
 
 #### `ember watson:upgrade-qunit-tests`
 
-This command will transverse your tests directory fixing your QUnit
+This command will traverse your tests directory fixing your QUnit
 test to use the 2.0 compatible output (see
 [ember-cli#3197](https://github.com/ember-cli/ember-cli/pull/3197)).
 
