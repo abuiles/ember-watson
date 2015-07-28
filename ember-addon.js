@@ -1,7 +1,7 @@
 /* jshint node: true */
 'use strict';
 
-var commands  = require('./addon/commands');
+var commands  = require('./lib/commands');
 
 module.exports = {
   name: 'ember-watson',

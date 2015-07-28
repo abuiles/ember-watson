@@ -9,23 +9,23 @@ var transformPrototypeExtensionsCalledWith;
 var transformQUnitTestCalledWith;
 var transformResourceRouterMappingCalledWith;
 
-proxyquire('../addon/commands/convert-ember-data-model-lookups', {
+proxyquire('../lib/commands/convert-ember-data-model-lookups', {
   '../../index': Mock
 });
 
-proxyquire('../addon/commands/convert-ember-data-async-false-relationships', {
+proxyquire('../lib/commands/convert-ember-data-async-false-relationships', {
   '../../index': Mock
 });
 
-proxyquire('../addon/commands/convert-prototype-extensions', {
+proxyquire('../lib/commands/convert-prototype-extensions', {
   '../../index': Mock
 });
 
-proxyquire('../addon/commands/upgrade-qunit-tests', {
+proxyquire('../lib/commands/upgrade-qunit-tests', {
   '../../index': Mock
 });
 
-proxyquire('../addon/commands/convert-resource-router-mapping', {
+proxyquire('../lib/commands/convert-resource-router-mapping', {
   '../../index': Mock
 });
 
@@ -62,7 +62,7 @@ describe('Commands:', function () {
   });
 
   it('convert-ember-data-model-lookups calls the correct transform', function () {
-    var Command = require('../addon/commands/convert-ember-data-model-lookups');
+    var Command = require('../lib/commands/convert-ember-data-model-lookups');
 
     Command.run({}, []);
     assert.deepEqual(transformEmberDataModelLookupsCalledWith, ['app']);
@@ -72,7 +72,7 @@ describe('Commands:', function () {
   });
 
   it('convert-ember-data-async-false-relationships calls the correct transform', function () {
-    var Command = require('../addon/commands/convert-ember-data-async-false-relationships');
+    var Command = require('../lib/commands/convert-ember-data-async-false-relationships');
 
     Command.run({}, []);
     assert.deepEqual(transformEmberDataAsyncFalseRelationshipsCalledWith, ['app']);
@@ -82,7 +82,7 @@ describe('Commands:', function () {
   });
 
   it('convert-prototype-extensions calls the correct transform', function () {
-    var Command = require('../addon/commands/convert-prototype-extensions');
+    var Command = require('../lib/commands/convert-prototype-extensions');
 
     Command.run({}, []);
     assert.deepEqual(transformPrototypeExtensionsCalledWith, ['app']);
@@ -92,7 +92,7 @@ describe('Commands:', function () {
   });
 
   it('upgrade-qunit-tests calls the correct transform', function () {
-    var Command = require('../addon/commands/upgrade-qunit-tests');
+    var Command = require('../lib/commands/upgrade-qunit-tests');
 
     Command.run({}, []);
     assert.deepEqual(transformQUnitTestCalledWith , ['tests']);
@@ -102,7 +102,7 @@ describe('Commands:', function () {
   });
 
   it('convert-resource-router-mapping calls the correct transform', function() {
-    var Command = require('../addon/commands/convert-resource-router-mapping');
+    var Command = require('../lib/commands/convert-resource-router-mapping');
 
     Command.run({}, []);
     assert.deepEqual(
