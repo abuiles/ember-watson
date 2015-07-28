@@ -8,6 +8,7 @@ var transformEmberDataAsyncFalseRelationshipsCalledWith;
 var transformPrototypeExtensionsCalledWith;
 var transformQUnitTestCalledWith;
 var transformResourceRouterMappingCalledWith;
+var transformMethodifyCalledWith;
 
 proxyquire('../lib/commands/convert-ember-data-model-lookups', {
   '../../index': Mock
@@ -26,6 +27,10 @@ proxyquire('../lib/commands/upgrade-qunit-tests', {
 });
 
 proxyquire('../lib/commands/convert-resource-router-mapping', {
+  '../../index': Mock
+});
+
+proxyquire('../lib/commands/methodify', {
   '../../index': Mock
 });
 
@@ -51,6 +56,10 @@ Mock.prototype.transformResourceRouterMapping = function () {
   transformResourceRouterMappingCalledWith = Array.prototype.slice.apply(arguments);
 };
 
+Mock.prototype.transformMethodify = function () {
+  transformMethodifyCalledWith = Array.prototype.slice.apply(arguments);
+};
+
 describe('Commands:', function () {
 
   afterEach(function () {
@@ -59,6 +68,7 @@ describe('Commands:', function () {
     transformPrototypeExtensionsCalledWith = null;
     transformQUnitTestCalledWith = null;
     transformResourceRouterMappingCalledWith = null;
+    transformMethodifyCalledWith = null;
   });
 
   it('convert-ember-data-model-lookups calls the correct transform', function () {
@@ -115,5 +125,15 @@ describe('Commands:', function () {
       transformResourceRouterMappingCalledWith,
       ['other-router']
     );
+  });
+
+  it('methodify calls the correct transform', function () {
+    var Command = require('../lib/commands/methodify');
+
+    Command.run({}, []);
+    assert.deepEqual(transformMethodifyCalledWith, ['app']);
+
+    Command.run({}, ['some-app']);
+    assert.deepEqual(transformMethodifyCalledWith, ['some-app']);
   });
 });
