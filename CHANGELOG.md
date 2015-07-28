@@ -1,5 +1,12 @@
 # ember-watson Changelog
 
+### 0.6.0
+
+- Updates QUnit transformation to work with QUnit.test style.
+- Remove commands from broccoli trees.
+- Adds command `methodify` which convert methods to new ES6 syntax.
+
+
 ### 0.5.9
 
 Improves `ember watson:convert-ember-data-model-lookups` do it doesn't
