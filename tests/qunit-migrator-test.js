@@ -14,6 +14,14 @@ describe('Qunit tests with ember-qunit', function() {
 });
 
 describe('Qunit tests only with qunit', function() {
+  it('makes the correct transformations when using QUnit.test', function() {
+    var source = fs.readFileSync('./tests/fixtures/qunit-files/old-using-qunit-global.js');
+    var watson = new Watson();
+    var newSource = watson._transformQUnitTest(source);
+
+    astEquality(newSource, fs.readFileSync('./tests/fixtures/qunit-files/new-using-qunit-global.js'));
+  });
+
   it('makes the correct transformations', function() {
     var source = fs.readFileSync('./tests/fixtures/qunit-files/old-with-qunit.js');
     var watson = new Watson();
