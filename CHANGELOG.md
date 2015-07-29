@@ -1,5 +1,9 @@
 # ember-watson Changelog
 
+### 0.6.1
+
+- Fix `watson:methodify` command to ensure app path gets defaulted correctly.
+
 ### 0.6.0
 
 - Updates QUnit transformation to work with QUnit.test style.
