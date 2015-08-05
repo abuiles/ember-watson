@@ -85,7 +85,7 @@ Converts `this.resource('user')` to `this.route('user',
 Helps with the deprecation added added in
 [ember.js/11517](https://github.com/emberjs/ember.js/pull/11517).
 
-#### `ember watson:methodify: <routerPath>`
+#### `ember watson:methodify <routerPath>`
 
 Converts methods in file to ES6 method syntax.
 
