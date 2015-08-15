@@ -19,4 +19,12 @@ describe('convert methods to ES6 syntax', function() {
 
     astEquality(newSource, expectedNewSource);
   });
+
+  it('converts to ES6 method syntax and ignores object destructuring', function() {
+    var source = fs.readFileSync(baseDir + '/destructuring-old.js');
+    var newSource = watson._transformMethodify(source);
+    var expectedNewSource = fs.readFileSync(baseDir + '/destructuring-new.js');
+
+    astEquality(newSource, expectedNewSource);
+  });
 });
