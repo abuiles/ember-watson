@@ -18,8 +18,9 @@
   "dependencies": {
     "chalk": "^1.0.0",
     "commander": "^2.6.0",
+    "esprima": "^2.5.0",
     "inflected": "^1.1.6",
-    "recast": "^0.9.17",
+    "recast": "^0.10.29",
     "walk-sync": "^0.1.3"
   },
   "devDependencies": {
