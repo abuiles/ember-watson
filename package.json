@@ -16,9 +16,9 @@
   "author": "Adolfo Builes",
   "license": "MIT",
   "dependencies": {
+    "babel-core": "^5.8.22",
     "chalk": "^1.0.0",
     "commander": "^2.6.0",
-    "esprima": "^2.5.0",
     "inflected": "^1.1.6",
     "recast": "^0.10.29",
     "walk-sync": "^0.1.3"
