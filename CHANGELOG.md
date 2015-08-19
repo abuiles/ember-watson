@@ -1,5 +1,10 @@
 # ember-watson Changelog
 
+### 0.6.3
+
+- Use babel as AST parser (see [#77](https://github.com/abuiles/ember-watson/pull/77)).
+- Update recast and use esprima as AST parser (see [#74](https://github.com/abuiles/ember-watson/pull/74)).
+
 ### 0.6.2
 
 - Improve error logging when file skipped (see [#71](https://github.com/abuiles/ember-watson/pull/71)).
