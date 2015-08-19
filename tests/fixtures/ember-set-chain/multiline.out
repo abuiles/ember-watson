@@ -1,0 +1,23 @@
+Using the return value of `set`:
+
+  1 | function fn() {
+  2 |   x.set('foo', 0)
+  3 |    .set('bar', 1)
+    |   ^^^^^^^^^^^^^^^
+  4 |    .set('baz', 2);
+
+Using the return value of `set`:
+
+  1 | function fn() {
+  2 |   x.set('foo', 0)
+    |   ^^^^^^^^^^^^^^^
+  3 |    .set('bar', 1)
+
+Using the return value of `set`:
+
+  5 | 
+  6 |   x.set('foo', {
+  7 |     a: 0
+  8 |   }).set('bar', 1);
+    |   ^^
+  9 | }
