@@ -89,6 +89,10 @@ Helps with the deprecation added added in
 
 Converts methods in file to ES6 method syntax.
 
+#### `ember watson:find-overloaded-cps <path>`
+
+Helps you locate all the places where your source may trigger the "Using the same function as getter and setter" deprecation.
+
 
 ### Specifying a file or path.
 
