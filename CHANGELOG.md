@@ -1,5 +1,13 @@
 # ember-watson Changelog
 
+### 0.6.4
+
+- Add `ember watson:find-overloaded-cps` command to help locating all
+the places where your source may trigger the "Using the same function
+as getter and setter" deprecation. This command is purely advisory, it
+outputs a colored report showing the snippets of code that are
+probably deprecated CPs.
+
 ### 0.6.3
 
 - Use babel as AST parser (see [#77](https://github.com/abuiles/ember-watson/pull/77)).
