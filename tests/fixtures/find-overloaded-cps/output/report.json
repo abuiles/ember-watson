@@ -1,0 +1,54 @@
+[
+  {
+    "filename": "tests/fixtures/find-overloaded-cps/input/sample.js",
+    "loc": {
+      "start": {
+        "line": 8,
+        "column": 9
+      },
+      "end": {
+        "line": 8,
+        "column": 42
+      }
+    }
+  },
+  {
+    "filename": "tests/fixtures/find-overloaded-cps/input/sample.js",
+    "loc": {
+      "start": {
+        "line": 9,
+        "column": 10
+      },
+      "end": {
+        "line": 9,
+        "column": 50
+      }
+    }
+  },
+  {
+    "filename": "tests/fixtures/find-overloaded-cps/input/sample.js",
+    "loc": {
+      "start": {
+        "line": 10,
+        "column": 9
+      },
+      "end": {
+        "line": 10,
+        "column": 47
+      }
+    }
+  },
+  {
+    "filename": "tests/fixtures/find-overloaded-cps/input/sample.js",
+    "loc": {
+      "start": {
+        "line": 11,
+        "column": 10
+      },
+      "end": {
+        "line": 11,
+        "column": 46
+      }
+     }
+  }
+]
