@@ -13,7 +13,7 @@ describe('Resource router mapping', function() {
   });
 
   describe('convert resource to route with resetNamespace option', function() {
-    it('transoform simple resource', function() {
+    it('transform simple resource', function() {
       var source            = fs.readFileSync(baseDir + '/old-foos-route.js');
       var newSource         = watson._transformResourceRouterMapping(source);
       var expectedNewSource = fs.readFileSync(baseDir + '/new-foos-route.js');
@@ -41,6 +41,14 @@ describe('Resource router mapping', function() {
       var source            = fs.readFileSync(baseDir + '/old-complex-ember-cli-sample.js');
       var newSource         = watson._transformResourceRouterMapping(source);
       var expectedNewSource = fs.readFileSync(baseDir + '/new-complex-ember-cli-sample.js');
+
+      astEquality(newSource, expectedNewSource);
+    });
+
+    it('transform conditional routing in ember-cli file format', function() {
+      var source            = fs.readFileSync(baseDir + '/old-ember-cli-conditional-sample.js');
+      var newSource         = watson._transformResourceRouterMapping(source);
+      var expectedNewSource = fs.readFileSync(baseDir + '/new-ember-cli-conditional-sample.js');
 
       astEquality(newSource, expectedNewSource);
     });
