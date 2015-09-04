@@ -1,5 +1,10 @@
 # ember-watson Changelog
 
+### 0.6.5
+
+- Make convert-resource-router-mapping transform not break when there is if expressions inside the router definition
+(see [#80](https://github.com/abuiles/ember-watson/pull/80)).
+
 ### 0.6.4
 
 - Add `ember watson:find-overloaded-cps` command to help locating all
