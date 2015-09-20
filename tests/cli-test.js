@@ -27,6 +27,10 @@ var commands = {
   'convert-resource-router-mapping': {
     method: 'transformResourceRouterMapping',
     path: 'app/router.js'
+  },
+  'use-destroy-app-helper': {
+    method: 'transformTestToUseDestroyApp',
+    path: 'tests/acceptance'
   }
 };
 

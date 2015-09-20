@@ -9,6 +9,7 @@ var transformPrototypeExtensionsCalledWith;
 var transformQUnitTestCalledWith;
 var transformResourceRouterMappingCalledWith;
 var transformMethodifyCalledWith;
+var transformTestToUseDestroyAppCalledWith;
 
 proxyquire('../lib/commands/convert-ember-data-model-lookups', {
   '../../index': Mock
@@ -31,6 +32,10 @@ proxyquire('../lib/commands/convert-resource-router-mapping', {
 });
 
 proxyquire('../lib/commands/methodify', {
+  '../../index': Mock
+});
+
+proxyquire('../lib/commands/use-destroy-app-helper', {
   '../../index': Mock
 });
 
@@ -60,6 +65,10 @@ Mock.prototype.transformMethodify = function () {
   transformMethodifyCalledWith = Array.prototype.slice.apply(arguments);
 };
 
+Mock.prototype.transformTestToUseDestroyApp = function() {
+  transformTestToUseDestroyAppCalledWith = Array.prototype.slice.apply(arguments);
+};
+
 describe('Commands:', function () {
 
   afterEach(function () {
@@ -69,6 +78,7 @@ describe('Commands:', function () {
     transformQUnitTestCalledWith = null;
     transformResourceRouterMappingCalledWith = null;
     transformMethodifyCalledWith = null;
+    transformTestToUseDestroyAppCalledWith = null;
   });
 
   it('convert-ember-data-model-lookups calls the correct transform', function () {
@@ -135,5 +145,15 @@ describe('Commands:', function () {
 
     Command.run({}, ['some-app']);
     assert.deepEqual(transformMethodifyCalledWith, ['some-app']);
+  });
+
+  it('methodify calls the correct transform', function () {
+    var Command = require('../lib/commands/use-destroy-app-helper');
+
+    Command.run({}, []);
+    assert.deepEqual(transformTestToUseDestroyAppCalledWith, ['tests/acceptance']);
+
+    Command.run({}, ['tests/my-crazy-other-thing']);
+    assert.deepEqual(transformTestToUseDestroyAppCalledWith, ['tests/my-crazy-other-thing']);
   });
 });

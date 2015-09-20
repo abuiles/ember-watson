@@ -93,6 +93,11 @@ Converts methods in file to ES6 method syntax.
 
 Helps you locate all the places where your source may trigger the "Using the same function as getter and setter" deprecation.
 
+#### `ember watson:use-destroy-app-helper <path>`
+
+Convert (qunit or mocha flavored) acceptance tests to utilize the `destroyApp`
+helper [introduced](https://github.com/ember-cli/ember-cli/pull/4772) in
+Ember CLI 1.13.9.
 
 ### Specifying a file or path.
 
