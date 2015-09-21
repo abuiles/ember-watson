@@ -1,5 +1,11 @@
 # ember-watson Changelog
 
+### 0.6.6
+
+- Add `ember watson:use-destroy-app-helper` which helps you migrate
+  acceptance tests to use destroy-app helper (for more info check
+  [#84](https://github.com/abuiles/ember-watson/pull/84))
+
 ### 0.6.5
 
 - Make convert-resource-router-mapping transform not break when there is if expressions inside the router definition
