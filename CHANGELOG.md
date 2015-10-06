@@ -1,5 +1,9 @@
 # ember-watson Changelog
 
+### 0.7.0
+
+- Add `ember watson:replace-needs-with-injection <path>` which replaces `needs` with `injection`. For more info check [#87](https://github.com/abuiles/ember-watson/pull/87))
+
 ### 0.6.6
 
 - Add `ember watson:use-destroy-app-helper` which helps you migrate
