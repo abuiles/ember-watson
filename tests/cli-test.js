@@ -31,6 +31,10 @@ var commands = {
   'use-destroy-app-helper': {
     method: 'transformTestToUseDestroyApp',
     path: 'tests/acceptance'
+  },
+  'replace-needs-with-injection': {
+    method: 'replaceNeedsWithInjection',
+    path: 'app/controllers'
   }
 };
 
