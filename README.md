@@ -99,6 +99,10 @@ Convert (qunit or mocha flavored) acceptance tests to utilize the `destroyApp`
 helper [introduced](https://github.com/ember-cli/ember-cli/pull/4772) in
 Ember CLI 1.13.9.
 
+#### `ember watson:replace-needs-with-injection <path>`
+
+Convert `needs` declarations the individual properties using the new `Ember.inject.controller()` feature. Also convert any uses of the `controllers` hash to use the newly defined properties.
+
 ### Specifying a file or path.
 
 You can run any of the commands passing as argument the path, file or
