@@ -2,6 +2,16 @@
 
 A young Ember Doctor.
 
+* [upgrade-qunit-tests](#ember-watsonupgrade-qunit-tests)
+* [convert-prototype-extensions](#ember-watsonconvert-prototype-extensions)
+* [convert-ember-data-async-false-relationships](#ember-watsonconvert-ember-data-async-false-relationships)
+* [convert-ember-data-model-lookups](#ember-watsonconvert-ember-data-model-lookups)
+* [convert-resource-router-mapping](#ember-watsonconvert-resource-router-mapping-routerpath)
+* [methodify](#ember-watsonmethodify-routerpath)
+* [find-overloaded-cps](#ember-watsonfind-overloaded-cps-path)
+* [use-destroy-app-helper](#ember-watsonuse-destroy-app-helper-path)
+* [replace-needs-with-injection](#ember-watsonreplace-needs-with-injection-path)
+
 ## Using as an ember CLI addon
 
 `ember-watson` can be used as an `ember CLI addon`, it will extend the
@@ -121,14 +131,11 @@ The same is possible with `ember watson:convert-prototype-extensions` and `ember
 `ember-watson` can be used without `ember CLI` too, just do `npm
 install -g ember-watson`
 
-### Commands
+Then you can use the commands from above, just with the altered syntax.
 
-#### `ember-watson upgrade-qunit-tests`
+`ember watson:upgrade-qunit-tests` becomes `ember-watson upgrade-qunit-tests`
 
-This command will transverse your tests directory fixing your QUnit
-test to use the 2.0 compatible output.
-
-#### `ember-watson convert-prototype-extensions`
+For additional help use `ember-watson -h`.
 
 ## License
 
