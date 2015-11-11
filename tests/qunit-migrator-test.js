@@ -45,4 +45,12 @@ describe('Qunit tests only with qunit', function() {
 
     astEquality(newSource, fs.readFileSync('./tests/fixtures/qunit-files/new-with-qunit.js'));
   });
+
+  it('transforms `test` calls with arrow functions to pass `assert` as first argument', function() {
+    var source = fs.readFileSync('./tests/fixtures/qunit-files/arrowfunction-old.js');
+    var watson = new Watson();
+    var newSource = watson._transformQUnitTest(source);
+
+    astEquality(newSource, fs.readFileSync('./tests/fixtures/qunit-files/arrowfunction-new.js'));
+  });
 });
