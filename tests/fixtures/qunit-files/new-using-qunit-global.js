@@ -1,6 +1,5 @@
-var thing;
-
 import {module, test, skip} from 'qunit';
+var thing;
 
 QUnit.module('foo-bar/helpers', {
   beforeEach: function(assert) {

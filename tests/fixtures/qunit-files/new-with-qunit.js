@@ -1,5 +1,5 @@
-import Ember from 'ember';
 import {module, test} from 'qunit';
+import Ember from 'ember';
 import startApp from '../../helpers/start-app';
 import Pretender from 'pretender';
 
