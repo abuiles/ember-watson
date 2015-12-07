@@ -7,7 +7,7 @@ A young Ember Doctor.
 * [convert-ember-data-async-false-relationships](#ember-watsonconvert-ember-data-async-false-relationships)
 * [convert-ember-data-model-lookups](#ember-watsonconvert-ember-data-model-lookups)
 * [convert-resource-router-mapping](#ember-watsonconvert-resource-router-mapping-routerpath)
-* [methodify](#ember-watsonmethodify-routerpath)
+* [methodify](#ember-watsonmethodify-path)
 * [find-overloaded-cps](#ember-watsonfind-overloaded-cps-path)
 * [use-destroy-app-helper](#ember-watsonuse-destroy-app-helper-path)
 * [replace-needs-with-injection](#ember-watsonreplace-needs-with-injection-path)
