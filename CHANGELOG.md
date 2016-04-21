@@ -1,5 +1,9 @@
 # ember-watson Changelog
 
+### 0.8.1
+
+- Add remove-ember-data-is-new-serializer-api command [#96](https://github.com/abuiles/ember-watson/pull/96) [fivetanley](https://github.com/fivetanley).
+
 ### 0.7.0
 
 - Add `ember watson:replace-needs-with-injection <path>` which replaces `needs` with `injection`. For more info check [#87](https://github.com/abuiles/ember-watson/pull/87))
