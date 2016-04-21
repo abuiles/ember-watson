@@ -11,6 +11,7 @@ A young Ember Doctor.
 * [find-overloaded-cps](#ember-watsonfind-overloaded-cps-path)
 * [use-destroy-app-helper](#ember-watsonuse-destroy-app-helper-path)
 * [replace-needs-with-injection](#ember-watsonreplace-needs-with-injection-path)
+* [remove-ember-data-is-new-serializer-api](#ember-watson-remove-ember-data-is-new-serializer-api)
 
 ## Using as an ember CLI addon
 
@@ -112,6 +113,26 @@ Ember CLI 1.13.9.
 #### `ember watson:replace-needs-with-injection <path>`
 
 Convert `needs` declarations the individual properties using the new `Ember.inject.controller()` feature. Also convert any uses of the `controllers` hash to use the newly defined properties.
+
+### `ember watson:remove-ember-data-is-new-serializer-api`
+
+Removes `isNewSerializerAPI` literals in your serializer code.
+You should use this *after* you make sure all your serializers are
+compatible with the new serializer API in 1.13. You can find more
+information on how to upgrade serializers
+[here](http://emberjs.com/blog/2015/06/18/ember-data-1-13-released.html#toc_transition-to-the-new-jsonserializer-and-restserializer-apis).
+
+```javascript
+
+// before
+export default DS.RESTSerializer.extend({
+  isNewSerializerAPI: true
+});
+
+// after
+
+export default DS.RESTSerializer.extend({});
+```
 
 ### Specifying a file or path.
 
