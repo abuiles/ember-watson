@@ -1,5 +1,9 @@
 # ember-watson Changelog
 
+### 0.8.2
+
+- Fix `remove-ember-data-is-new-serializer-api` so it can be run inside ember-cli.
+
 ### 0.8.1
 
 - Add remove-ember-data-is-new-serializer-api command [#96](https://github.com/abuiles/ember-watson/pull/96) [fivetanley](https://github.com/fivetanley).
