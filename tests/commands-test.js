@@ -85,40 +85,52 @@ describe('Commands:', function () {
     var Command = require('../lib/commands/convert-ember-data-model-lookups');
 
     Command.run({}, []);
-    assert.deepEqual(transformEmberDataModelLookupsCalledWith, ['app']);
+    assert.deepEqual(transformEmberDataModelLookupsCalledWith, ['app', undefined]);
 
     Command.run({}, ['some-app']);
-    assert.deepEqual(transformEmberDataModelLookupsCalledWith, ['some-app']);
+    assert.deepEqual(transformEmberDataModelLookupsCalledWith, ['some-app', undefined]);
+
+    Command.run({ dryRun: true }, ['some-app']);
+    assert.deepEqual(transformEmberDataModelLookupsCalledWith, ['some-app', true]);
   });
 
   it('convert-ember-data-async-false-relationships calls the correct transform', function () {
     var Command = require('../lib/commands/convert-ember-data-async-false-relationships');
 
     Command.run({}, []);
-    assert.deepEqual(transformEmberDataAsyncFalseRelationshipsCalledWith, ['app']);
+    assert.deepEqual(transformEmberDataAsyncFalseRelationshipsCalledWith, ['app', undefined]);
 
     Command.run({}, ['some-app']);
-    assert.deepEqual(transformEmberDataAsyncFalseRelationshipsCalledWith, ['some-app']);
+    assert.deepEqual(transformEmberDataAsyncFalseRelationshipsCalledWith, ['some-app', undefined]);
+
+    Command.run({ dryRun: true }, ['some-app']);
+    assert.deepEqual(transformEmberDataAsyncFalseRelationshipsCalledWith, ['some-app', true]);
   });
 
   it('convert-prototype-extensions calls the correct transform', function () {
     var Command = require('../lib/commands/convert-prototype-extensions');
 
     Command.run({}, []);
-    assert.deepEqual(transformPrototypeExtensionsCalledWith, ['app']);
+    assert.deepEqual(transformPrototypeExtensionsCalledWith, ['app', undefined]);
 
     Command.run({}, ['some-app']);
-    assert.deepEqual(transformPrototypeExtensionsCalledWith, ['some-app']);
+    assert.deepEqual(transformPrototypeExtensionsCalledWith, ['some-app', undefined]);
+
+    Command.run({ dryRun: true }, ['some-app']);
+    assert.deepEqual(transformPrototypeExtensionsCalledWith, ['some-app', true]);
   });
 
   it('upgrade-qunit-tests calls the correct transform', function () {
     var Command = require('../lib/commands/upgrade-qunit-tests');
 
     Command.run({}, []);
-    assert.deepEqual(transformQUnitTestCalledWith , ['tests']);
+    assert.deepEqual(transformQUnitTestCalledWith , ['tests', undefined]);
 
     Command.run({}, ['other-dir']);
-    assert.deepEqual(transformQUnitTestCalledWith , ['other-dir']);
+    assert.deepEqual(transformQUnitTestCalledWith , ['other-dir', undefined]);
+
+    Command.run({ dryRun: true }, ['other-dir']);
+    assert.deepEqual(transformQUnitTestCalledWith , ['other-dir', true]);
   });
 
   it('convert-resource-router-mapping calls the correct transform', function() {
@@ -127,13 +139,19 @@ describe('Commands:', function () {
     Command.run({}, []);
     assert.deepEqual(
       transformResourceRouterMappingCalledWith,
-      ['app/router.js']
+      ['app/router.js', undefined]
     );
 
     Command.run({}, ['other-router']);
     assert.deepEqual(
       transformResourceRouterMappingCalledWith,
-      ['other-router']
+      ['other-router', undefined]
+    );
+
+    Command.run({ dryRun: true }, ['other-router']);
+    assert.deepEqual(
+      transformResourceRouterMappingCalledWith,
+      ['other-router', true]
     );
   });
 
@@ -141,19 +159,25 @@ describe('Commands:', function () {
     var Command = require('../lib/commands/methodify');
 
     Command.run({}, []);
-    assert.deepEqual(transformMethodifyCalledWith, ['app']);
+    assert.deepEqual(transformMethodifyCalledWith, ['app', undefined]);
 
     Command.run({}, ['some-app']);
-    assert.deepEqual(transformMethodifyCalledWith, ['some-app']);
+    assert.deepEqual(transformMethodifyCalledWith, ['some-app', undefined]);
+
+    Command.run({ dryRun: true }, ['some-app']);
+    assert.deepEqual(transformMethodifyCalledWith, ['some-app', true]);
   });
 
   it('methodify calls the correct transform', function () {
     var Command = require('../lib/commands/use-destroy-app-helper');
 
     Command.run({}, []);
-    assert.deepEqual(transformTestToUseDestroyAppCalledWith, ['tests/acceptance']);
+    assert.deepEqual(transformTestToUseDestroyAppCalledWith, ['tests/acceptance', undefined]);
 
     Command.run({}, ['tests/my-crazy-other-thing']);
-    assert.deepEqual(transformTestToUseDestroyAppCalledWith, ['tests/my-crazy-other-thing']);
+    assert.deepEqual(transformTestToUseDestroyAppCalledWith, ['tests/my-crazy-other-thing', undefined]);
+
+    Command.run({ dryRun: true }, ['tests/my-crazy-other-thing']);
+    assert.deepEqual(transformTestToUseDestroyAppCalledWith, ['tests/my-crazy-other-thing', true]);
   });
 });
