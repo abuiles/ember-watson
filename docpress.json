@@ -1,0 +1,12 @@
+{
+  "css": [
+    "styles/rsc.css",
+    "styles/main.css"
+  ],
+  "github": "abuiles/ember-watson",
+  "markdown": {
+    "plugins": {
+      "decorate": {}
+    }
+  }
+}
