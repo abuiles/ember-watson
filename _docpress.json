@@ -1,0 +1,183 @@
+{
+  "toc": {
+    "sections": [
+      {
+        "title": "ember-watson",
+        "source": "README.md",
+        "expand": true,
+        "url": "index.html",
+        "slug": "index",
+        "headings": [
+          {
+            "title": "Getting Started",
+            "depth": 2,
+            "id": "getting-started"
+          },
+          {
+            "title": "Commands",
+            "depth": 2,
+            "id": "commands",
+            "headings": [
+              {
+                "title": "Prototype Extensions",
+                "depth": 3,
+                "id": "prototype-extensions"
+              },
+              {
+                "title": "Resource Router Mapping",
+                "depth": 3,
+                "id": "resource-router-mapping"
+              },
+              {
+                "title": "Methodify (ES2015)",
+                "depth": 3,
+                "id": "methodify-(es2015)"
+              },
+              {
+                "title": "Find Overloaded CPS",
+                "depth": 3,
+                "id": "find-overloaded-cps"
+              },
+              {
+                "title": "Replace Needs with Injection",
+                "depth": 3,
+                "id": "replace-needs-with-injection"
+              },
+              {
+                "title": "Tests: Upgrade QUnit Tests",
+                "depth": 3,
+                "id": "tests:-upgrade-qunit-tests"
+              },
+              {
+                "title": "Tests: Use Destroy App Helper",
+                "depth": 3,
+                "id": "tests:-use-destroy-app-helper"
+              },
+              {
+                "title": "Ember Data: Async Relationships Default",
+                "depth": 3,
+                "id": "ember-data:-async-relationships-default"
+              },
+              {
+                "title": "Ember Data: Model Lookups",
+                "depth": 3,
+                "id": "ember-data:-model-lookups"
+              },
+              {
+                "title": "Ember Data: Remove isNewSerializerAPI",
+                "depth": 3,
+                "id": "ember-data:-remove-isnewserializerapi"
+              }
+            ]
+          },
+          {
+            "title": "Specifying a file or path",
+            "depth": 2,
+            "id": "specifying-a-file-or-path"
+          },
+          {
+            "title": "Using without Ember CLI",
+            "depth": 2,
+            "id": "using-without-ember-cli"
+          },
+          {
+            "title": "License",
+            "depth": 2,
+            "id": "license"
+          }
+        ]
+      }
+    ]
+  },
+  "index": {
+    "index.html": {
+      "source": "README.md",
+      "title": "ember-watson",
+      "slug": "index",
+      "headings": [
+        {
+          "title": "Getting Started",
+          "depth": 2,
+          "id": "getting-started"
+        },
+        {
+          "title": "Commands",
+          "depth": 2,
+          "id": "commands",
+          "headings": [
+            {
+              "title": "Prototype Extensions",
+              "depth": 3,
+              "id": "prototype-extensions"
+            },
+            {
+              "title": "Resource Router Mapping",
+              "depth": 3,
+              "id": "resource-router-mapping"
+            },
+            {
+              "title": "Methodify (ES2015)",
+              "depth": 3,
+              "id": "methodify-(es2015)"
+            },
+            {
+              "title": "Find Overloaded CPS",
+              "depth": 3,
+              "id": "find-overloaded-cps"
+            },
+            {
+              "title": "Replace Needs with Injection",
+              "depth": 3,
+              "id": "replace-needs-with-injection"
+            },
+            {
+              "title": "Tests: Upgrade QUnit Tests",
+              "depth": 3,
+              "id": "tests:-upgrade-qunit-tests"
+            },
+            {
+              "title": "Tests: Use Destroy App Helper",
+              "depth": 3,
+              "id": "tests:-use-destroy-app-helper"
+            },
+            {
+              "title": "Ember Data: Async Relationships Default",
+              "depth": 3,
+              "id": "ember-data:-async-relationships-default"
+            },
+            {
+              "title": "Ember Data: Model Lookups",
+              "depth": 3,
+              "id": "ember-data:-model-lookups"
+            },
+            {
+              "title": "Ember Data: Remove isNewSerializerAPI",
+              "depth": 3,
+              "id": "ember-data:-remove-isnewserializerapi"
+            }
+          ]
+        },
+        {
+          "title": "Specifying a file or path",
+          "depth": 2,
+          "id": "specifying-a-file-or-path"
+        },
+        {
+          "title": "Using without Ember CLI",
+          "depth": 2,
+          "id": "using-without-ember-cli"
+        },
+        {
+          "title": "License",
+          "depth": 2,
+          "id": "license"
+        }
+      ]
+    }
+  },
+  "sources": {
+    "README.md": "index.html",
+    "docs/styles/main.css": "styles/main.css",
+    "docs/styles/rsc.css": "styles/rsc.css"
+  }
+}

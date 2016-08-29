@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="assets/style.css?t=a44c9e9d">
+    <link rel="stylesheet" href="styles/rsc.css?t=1146e3d0">
+    <link rel="stylesheet" href="styles/main.css?t=70d86122">
+    <script src="assets/script.js?t=2bcc4b59"></script>
+    <title>ember-watson</title>
+    <meta name="viewport" content="width=device-width">
+  </head>
+  <body class="-menu-visible">
+    <div class="doc-layout">
+      <div class="toggle menu-toggle js-menu-toggle"></div>
+      <div class="body page-index">
+        <div class="header-nav">
+          <div class="right">
+          </div>
+        </div>
+        <div class="markdown-body"><h1 id="ember-watson">ember-watson</h1>
+<p>A young Ember Doctor.</p>
+<p><a href="https://travis-ci.org/abuiles/ember-watson"><img src="https://travis-ci.org/abuiles/ember-watson.svg?branch=master" alt="Build Status"></a></p>
+<h2 id="getting-started">Getting Started</h2>
+<p><code>ember-watson</code> can be used as an Ember CLI addon, it will extend the
+available list of commands.</p>
+<p>To install, run <code>ember install ember-watson</code> and you are good
+to go.</p>
+<h2 id="commands">Commands</h2>
+<h3 id="prototype-extensions">Prototype Extensions</h3>
+<pre><code class="lang-sh">ember watson:convert-prototype-extensions
+</code></pre>
+<p>Convert computed properties and observers to not use prototype
+extensions. You can specify <code>appPath</code> (defaults to <code>app/</code>) in case you
+want to convert code somewhere different to <code>app/</code>.</p>
+<p>For more info about this please refer to the following PR <a href="https://github.com/emberjs/guides/pull/110">Encourage decorator-style Ember.computed/Ember.observer</a></p>
+<h3 id="resource-router-mapping">Resource Router Mapping</h3>
+<pre><code class="lang-sh">ember watson:convert-resource-router-mapping &lt;routerPath&gt;
+</code></pre>
+<p>Converts <code>this.resource(&apos;user&apos;)</code> to <code>this.route(&apos;user&apos;, {resetNamespace: true })</code> in <code>app/router.js</code>.</p>
+<p>Helps with the deprecation added in
+<a href="https://github.com/emberjs/ember.js/pull/11517">ember.js/11517</a>.</p>
+<h3 id="methodify-(es2015)">Methodify (ES2015)</h3>
+<pre><code class="lang-sh">ember watson:methodify &lt;path&gt;
+</code></pre>
+<p>Converts methods in file to ES6 method syntax.</p>
+<h3 id="find-overloaded-cps">Find Overloaded CPS</h3>
+<pre><code class="lang-sh">ember watson:find-overloaded-cps &lt;path&gt;
+</code></pre>
+<p>Helps you locate all the places where your source may trigger the
+&quot;Using the same function as getter and setter&quot; deprecation.</p>
+<h3 id="replace-needs-with-injection">Replace Needs with Injection</h3>
+<pre><code class="lang-sh">ember watson:replace-needs-with-injection &lt;path&gt;
+</code></pre>
+<p>Convert <code>needs</code> declarations the individual properties using
+the new <code>Ember.inject.controller()</code> feature. Also convert any uses
+of the <code>controllers</code> hash to use the newly defined properties.</p>
+<h3 id="tests:-upgrade-qunit-tests">Tests: Upgrade QUnit Tests</h3>
+<pre><code class="lang-sh">ember watson:upgrade-qunit-tests
+</code></pre>
+<p>This command will traverse your tests directory fixing your QUnit
+test to use the 2.0 compatible output (see
+<a href="https://github.com/ember-cli/ember-cli/pull/3197">ember-cli#3197</a>).</p>
+<p>The following are some of the changes:</p>
+<ul>
+<li>Add <code>import { module, test } from &apos;qunit&apos;</code> if ember-qunit is not
+used. You need to use ember-cli-qunit-v0.3.8 which includes
+QUnit&apos;s shims. See <a href="https://github.com/ember-cli/ember-cli/pull/3245">ember-cli#3245</a></li>
+<li>Import <code>skip</code> if used in tests: <code>import { module,test, skip } from &apos;qunit&apos;</code></li>
+<li>Add assert to callback function in <code>test</code>.</li>
+<li>Use <code>assert</code> inside test, e.g. <code>ok</code> becomes <code>assert.ok</code>.</li>
+<li>Use <code>beforeEach</code> and <code>afterEach</code> instead of <code>setup</code> and <code>teardown</code>
+inside module.</li>
+</ul>
+<h3 id="tests:-use-destroy-app-helper">Tests: Use Destroy App Helper</h3>
+<pre><code class="lang-sh">ember watson:use-destroy-app-helper &lt;path&gt;
+</code></pre>
+<p>Convert (qunit or mocha flavored) acceptance tests to utilize the <code>destroyApp</code>
+helper <a href="https://github.com/ember-cli/ember-cli/pull/4772">introduced</a> in
+Ember CLI 1.13.9.</p>
+<h3 id="ember-data:-async-relationships-default">Ember Data: Async Relationships Default</h3>
+<pre><code class="lang-sh">ember watson:convert-ember-data-async-false-relationships
+</code></pre>
+<p>In Ember Data 2.0 relationships will be asynchronous by default. Sync relationships will still be supported but you will need to manually opt into them by setting { async: false } on your relationships. This task adds an explicit <code>async: false</code> options to all <code>belongsTo</code> and <code>hasMany</code> that
+either have no options or its options does not contain an explicit async value.</p>
+<p>For more information, read <a href="http://emberjs.com/blog/2015/06/18/ember-data-1-13-released.html#toc_async-relationships">ember-data 1.13 release notes</a></p>
+<h3 id="ember-data:-model-lookups">Ember Data: Model Lookups</h3>
+<pre><code class="lang-sh">ember watson:convert-ember-data-model-lookups
+</code></pre>
+<p>This changes the way model lookups happen when working with Ember
+Data. When using <code>hasMany</code> or <code>belongsTo</code>, the first argument will
+become a dasherized string. Here&apos;s some examples:</p>
+<pre><code class="lang-javascript"><span class="pl-c">// before, using a camelCase string</span>
+<span class="pl-k">export</span> <span class="pl-k">default</span> DS.Model.extend({
+  postComments: DS.hasMany(<span class="pl-s">&apos;postComment&apos;</span>, {<span class="pl-k">async</span>: <span class="pl-c1">true</span>})
+});
+
+<span class="pl-c">// after</span>
+<span class="pl-k">export</span> <span class="pl-k">default</span> DS.Model.extend({
+  postComments: DS.hasMany(<span class="pl-s">&apos;post-comment&apos;</span>, {<span class="pl-k">async</span>: <span class="pl-c1">true</span>})
+});
+
+<span class="pl-c">// before, using an variable or looking up on App.</span>
+<span class="pl-k">export</span> <span class="pl-k">default</span> DS.Model.extend({
+  postComments: DS.hasMany(PostComment, {<span class="pl-k">async</span>: <span class="pl-c1">true</span>})
+});
+
+<span class="pl-c">// after</span>
+<span class="pl-k">export</span> <span class="pl-k">default</span> DS.Model.extend({
+  postComments: DS.hasMany(<span class="pl-s">&apos;post-comment&apos;</span>, {<span class="pl-k">async</span>: <span class="pl-c1">true</span>})
+});
+</code></pre>
+<h3 id="ember-data:-remove-isnewserializerapi">Ember Data: Remove isNewSerializerAPI</h3>
+<pre><code class="lang-sh">ember watson:remove-ember-data-is-new-serializer-api
+</code></pre>
+<p>Removes <code>isNewSerializerAPI</code> literals in your serializer code.
+You should use this <em>after</em> you make sure all your serializers are
+compatible with the new serializer API in 1.13. You can find more
+information on how to upgrade serializers
+<a href="http://emberjs.com/blog/2015/06/18/ember-data-1-13-released.html#toc_transition-to-the-new-jsonserializer-and-restserializer-apis">here</a>.</p>
+<pre><code class="lang-javascript"><span class="pl-c">// before</span>
+<span class="pl-k">export</span> <span class="pl-k">default</span> DS.RESTSerializer.extend({
+  isNewSerializerAPI: <span class="pl-c1">true</span>
+});
+
+<span class="pl-c">// after</span>
+<span class="pl-k">export</span> <span class="pl-k">default</span> DS.RESTSerializer.extend({});
+</code></pre>
+<h2 id="specifying-a-file-or-path">Specifying a file or path</h2>
+<p>You can run any of the commands passing as argument the path, file or
+regular expression of the files that you want to transform.</p>
+<pre><code class="lang-sh">ember watson:upgrade-qunit-tests tests/unit*
+ember watson:upgrade-qunit-tests tests/unit/model-test.js
+ember watson:upgrade-qunit-tests tests
+</code></pre>
+<p>The same is possible with <code>ember watson:convert-prototype-extensions</code>
+and <code>ember watson:convert-ember-data-model-lookups</code>.</p>
+<h2 id="using-without-ember-cli">Using without Ember CLI</h2>
+<p><code>ember-watson</code> can be used without Ember CLI too, just do <code>npm install -g ember-watson</code>.</p>
+<p>Then you can use the commands from above, just with the altered syntax.</p>
+<p><code>ember watson:upgrade-qunit-tests</code> becomes <code>ember-watson upgrade-qunit-tests</code></p>
+<p>For additional help use <code>ember-watson -h</code>.</p>
+<h2 id="license">License</h2>
+<p>ember-watson is <a href="https://github.com/abuiles/ember-watson/blob/master/LICENSE.md">MIT Licensed</a>.</p>
+
+        </div>
+      </div>
+      <div class="menu toc-menu">
+        <li class="menu-item -level-0 -parent">
+          <ul class="submenu">
+            <li class="menu-item -level-1"><a href="index.html" class="link title -active link-index">ember-watson</a>
+            </li>
+            <li class="menu-item -level-1"><a href="#getting-started" class="link title link-getting-started">Getting Started</a>
+            </li>
+            <li class="menu-item -level-1 -parent"><a href="#commands" class="link title link-commands">Commands</a>
+              <ul class="submenu">
+                <li class="menu-item -level-2"><a href="#prototype-extensions" class="link title link-prototype-extensions">Prototype Extensions</a>
+                </li>
+                <li class="menu-item -level-2"><a href="#resource-router-mapping" class="link title link-resource-router-mapping">Resource Router Mapping</a>
+                </li>
+                <li class="menu-item -level-2"><a href="#methodify-(es2015)" class="link title link-methodify-(es2015)">Methodify (ES2015)</a>
+                </li>
+                <li class="menu-item -level-2"><a href="#find-overloaded-cps" class="link title link-find-overloaded-cps">Find Overloaded CPS</a>
+                </li>
+                <li class="menu-item -level-2"><a href="#replace-needs-with-injection" class="link title link-replace-needs-with-injection">Replace Needs with Injection</a>
+                </li>
+                <li class="menu-item -level-2"><a href="#tests:-upgrade-qunit-tests" class="link title link-tests:-upgrade-qunit-tests">Tests: Upgrade QUnit Tests</a>
+                </li>
+                <li class="menu-item -level-2"><a href="#tests:-use-destroy-app-helper" class="link title link-tests:-use-destroy-app-helper">Tests: Use Destroy App Helper</a>
+                </li>
+                <li class="menu-item -level-2"><a href="#ember-data:-async-relationships-default" class="link title link-ember-data:-async-relationships-default">Ember Data: Async Relationships Default</a>
+                </li>
+                <li class="menu-item -level-2"><a href="#ember-data:-model-lookups" class="link title link-ember-data:-model-lookups">Ember Data: Model Lookups</a>
+                </li>
+                <li class="menu-item -level-2"><a href="#ember-data:-remove-isnewserializerapi" class="link title link-ember-data:-remove-isnewserializerapi">Ember Data: Remove isNewSerializerAPI</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item -level-1"><a href="#specifying-a-file-or-path" class="link title link-specifying-a-file-or-path">Specifying a file or path</a>
+            </li>
+            <li class="menu-item -level-1"><a href="#using-without-ember-cli" class="link title link-using-without-ember-cli">Using without Ember CLI</a>
+            </li>
+            <li class="menu-item -level-1"><a href="#license" class="link title link-license">License</a>
+            </li>
+          </ul>
+        </li>
+      </div>
+    </div>
+  </body>
+</html>
