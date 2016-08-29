@@ -40,7 +40,7 @@ ember watson:convert-resource-router-mapping <routerPath>
 Converts `this.resource('user')` to `this.route('user',
 {resetNamespace: true })` in `app/router.js`.
 
-Helps with the deprecation added added in
+Helps with the deprecation added in
 [ember.js/11517](https://github.com/emberjs/ember.js/pull/11517).
 
 
