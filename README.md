@@ -5,18 +5,7 @@ A young Ember Doctor.
 [![Build Status](https://travis-ci.org/abuiles/ember-watson.svg?branch=master)](https://travis-ci.org/abuiles/ember-watson)
 
 
-* [upgrade-qunit-tests](#ember-watsonupgrade-qunit-tests)
-* [convert-prototype-extensions](#ember-watsonconvert-prototype-extensions)
-* [convert-ember-data-async-false-relationships](#ember-watsonconvert-ember-data-async-false-relationships)
-* [convert-ember-data-model-lookups](#ember-watsonconvert-ember-data-model-lookups)
-* [convert-resource-router-mapping](#ember-watsonconvert-resource-router-mapping-routerpath)
-* [methodify](#ember-watsonmethodify-path)
-* [find-overloaded-cps](#ember-watsonfind-overloaded-cps-path)
-* [use-destroy-app-helper](#ember-watsonuse-destroy-app-helper-path)
-* [replace-needs-with-injection](#ember-watsonreplace-needs-with-injection-path)
-* [remove-ember-data-is-new-serializer-api](#ember-watson-remove-ember-data-is-new-serializer-api)
-
-## Using as an Ember CLI addon
+## Getting Started
 
 `ember-watson` can be used as an Ember CLI addon, it will extend the
 available list of commands.
