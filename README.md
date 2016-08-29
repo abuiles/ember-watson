@@ -130,7 +130,6 @@ Data. When using `hasMany` or `belongsTo`, the first argument will
 become a dasherized string. Here's some examples:
 
 ```javascript
-
 // before, using a camelCase string
 export default DS.Model.extend({
   postComments: DS.hasMany('postComment', {async: true})
