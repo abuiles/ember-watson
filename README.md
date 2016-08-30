@@ -1,6 +1,6 @@
 # ember-watson
-
-A young Ember Doctor.
+<!--{h1:.massive-header.-with-tagline}-->
+> A young Ember Doctor.
 
 [![Build Status](https://travis-ci.org/abuiles/ember-watson.svg?branch=master)](https://travis-ci.org/abuiles/ember-watson)
 
