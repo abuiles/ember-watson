@@ -1,6 +1,11 @@
 # ember-watson Changelog
 
-### 0.8.3
+### 0.8.5
+
+- Fixes property forward flags to remove-ember-k command. [https://github.com/abuiles/ember-watson/pull/106](https://github.com/abuiles/ember-watson/pull/106).
+
+
+### 0.8.4
 
 - Add `remove-ember-k` which replaces all usages of `Ember.K` with just plain functions [cibernox](https://github.com/abuiles/ember-watson/pull/105).
 
