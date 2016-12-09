@@ -73,6 +73,18 @@ Convert `needs` declarations the individual properties using
 the new `Ember.inject.controller()` feature. Also convert any uses
 of the `controllers` hash to use the newly defined properties.
 
+### Remove usages of Ember.K
+
+```sh
+ember watson:remove-ember-k <mode>
+```
+
+Replaces all usages of `Ember.K` with just plain functions.
+The `<mode>` argument is mandatory and can be `--empty` or `--return-this`.
+Invoked with `--empty` it will replace `Ember.K` with an empty function, which is more idiomatic JS.
+Invoked with `--return-empty` it will replace it by a function that returns `this` so allows chaining.
+This command runs automatically in all folders that might contain ember code, so no `<path>` or `--dry-run`
+options are available.
 
 ### Tests: Upgrade QUnit Tests
 
