@@ -1,5 +1,10 @@
 # ember-watson Changelog
 
+### 0.8.3
+
+- Add `remove-ember-k` which replaces all usages of `Ember.K` with just plain functions [cibernox](https://github.com/abuiles/ember-watson/pull/105).
+
+
 ### 0.8.2
 
 - Fix `remove-ember-data-is-new-serializer-api` so it can be run inside ember-cli.
