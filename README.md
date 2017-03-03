@@ -152,7 +152,7 @@ export default DS.Model.extend({
   postComments: DS.hasMany('post-comment', {async: true})
 });
 
-// before, using an variable or looking up on App.
+// before, using a variable or looking up on App.
 export default DS.Model.extend({
   postComments: DS.hasMany(PostComment, {async: true})
 });
