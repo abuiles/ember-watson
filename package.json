@@ -18,7 +18,7 @@
   "author": "Adolfo Builes",
   "license": "MIT",
   "dependencies": {
-    "babel-core": "^5.8.22",
+    "babel-core": "^6.24.0",
     "chalk": "^1.0.0",
     "commander": "^2.6.0",
     "exists-sync": "0.0.3",
