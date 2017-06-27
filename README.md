@@ -119,6 +119,43 @@ helper [introduced](https://github.com/ember-cli/ember-cli/pull/4772) in
 Ember CLI 1.13.9.
 
 
+### Tests: Convert `andThen` style async tests to `async/await`
+
+```sh
+ember watson:convert-tests-to-async-await <path>
+```
+
+Convert (qunit or mocha flavored) acceptance tests to utilize `async/await`
+
+```js
+// before:
+it('can visit subroutes', function(done) {
+  visit('/');
+
+  andThen(function() {
+    expect(find('h2').text()).to.be.empty;
+  });
+
+  visit('/foo');
+
+  andThen(function() {
+    expect(find('h2').text()).to.be.equal('this is an acceptance test');
+    done();
+  });
+});
+
+// after:
+it('can visit subroutes', async function() {
+  await visit('/');
+
+  expect(find('h2').text()).to.be.empty;
+
+  await visit('/foo');
+
+  expect(find('h2').text()).to.be.equal('this is an acceptance test');
+});
+```
+
 ### Ember Data: Async Relationships Default
 
 ```sh
