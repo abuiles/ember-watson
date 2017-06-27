@@ -51,4 +51,12 @@ describe('Mocha async transformation', function() {
 
     astEquality(newSource, expectedNewSource);
   });
+
+  it('transforms async qunit test', function() {
+    var source            = fs.readFileSync(baseDir + '/old-qunit.js');
+    var newSource         = watson._transformMochaToAsync(source);
+    var expectedNewSource = fs.readFileSync(baseDir + '/new-qunit.js');
+
+    astEquality(newSource, expectedNewSource);
+  });
 });
