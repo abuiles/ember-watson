@@ -44,6 +44,11 @@
                 "id": "replace-needs-with-injection"
               },
               {
+                "title": "Remove usages of Ember.K",
+                "depth": 3,
+                "id": "remove-usages-of-ember.k"
+              },
+              {
                 "title": "Tests: Upgrade QUnit Tests",
                 "depth": 3,
                 "id": "tests:-upgrade-qunit-tests"
@@ -52,6 +57,11 @@
                 "title": "Tests: Use Destroy App Helper",
                 "depth": 3,
                 "id": "tests:-use-destroy-app-helper"
+              },
+              {
+                "title": "Tests: Convert `andThen` style async tests to `async/await`",
+                "depth": 3,
+                "id": "tests:-convert-andthen-style-async-tests-to-asyncawait"
               },
               {
                 "title": "Ember Data: Async Relationships Default",
@@ -131,6 +141,11 @@
               "id": "replace-needs-with-injection"
             },
             {
+              "title": "Remove usages of Ember.K",
+              "depth": 3,
+              "id": "remove-usages-of-ember.k"
+            },
+            {
               "title": "Tests: Upgrade QUnit Tests",
               "depth": 3,
               "id": "tests:-upgrade-qunit-tests"
@@ -139,6 +154,11 @@
               "title": "Tests: Use Destroy App Helper",
               "depth": 3,
               "id": "tests:-use-destroy-app-helper"
+            },
+            {
+              "title": "Tests: Convert `andThen` style async tests to `async/await`",
+              "depth": 3,
+              "id": "tests:-convert-andthen-style-async-tests-to-asyncawait"
             },
             {
               "title": "Ember Data: Async Relationships Default",

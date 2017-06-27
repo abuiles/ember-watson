@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="assets/style.css?t=a44c9e9d">
     <link rel="stylesheet" href="styles/rsc.css?t=1146e3d0">
     <link rel="stylesheet" href="styles/main.css?t=70d86122">
-    <script src="assets/script.js?t=2bcc4b59"></script>
+    <script src="assets/script.js?t=820b7ffa"></script>
     <title>ember-watson</title>
     <meta name="viewport" content="width=device-width">
   </head>
@@ -57,6 +57,15 @@ want to convert code somewhere different to <code>app/</code>.</p>
 <p>Convert <code>needs</code> declarations the individual properties using
 the new <code>Ember.inject.controller()</code> feature. Also convert any uses
 of the <code>controllers</code> hash to use the newly defined properties.</p>
+<h3 id="remove-usages-of-ember.k">Remove usages of Ember.K</h3>
+<pre><code class="lang-sh">ember watson:remove-ember-k &lt;mode&gt;
+</code></pre>
+<p>Replaces all usages of <code>Ember.K</code> with just plain functions.
+The <code>&lt;mode&gt;</code> argument is mandatory and can be <code>--empty</code> or <code>--return-this</code>.
+Invoked with <code>--empty</code> it will replace <code>Ember.K</code> with an empty function, which is more idiomatic JS.
+Invoked with <code>--return-empty</code> it will replace it by a function that returns <code>this</code> so allows chaining.
+This command runs automatically in all folders that might contain ember code, so no <code>&lt;path&gt;</code> or <code>--dry-run</code>
+options are available.</p>
 <h3 id="tests:-upgrade-qunit-tests">Tests: Upgrade QUnit Tests</h3>
 <pre><code class="lang-sh">ember watson:upgrade-qunit-tests
 </code></pre>
@@ -80,6 +89,37 @@ inside module.</li>
 <p>Convert (qunit or mocha flavored) acceptance tests to utilize the <code>destroyApp</code>
 helper <a href="https://github.com/ember-cli/ember-cli/pull/4772">introduced</a> in
 Ember CLI 1.13.9.</p>
+<h3 id="tests:-convert-andthen-style-async-tests-to-asyncawait">Tests: Convert <code>andThen</code> style async tests to <code>async/await</code></h3>
+<pre><code class="lang-sh">ember watson:convert-tests-to-async-await &lt;path&gt;
+</code></pre>
+<p>Convert (qunit or mocha flavored) acceptance tests to utilize <code>async/await</code></p>
+<pre><code class="lang-js"><span class="pl-c">// before:</span>
+it(<span class="pl-s">&apos;can visit subroutes&apos;</span>, <span class="hljs-function"><span class="pl-k">function</span>(<span class="hljs-params">done</span>) </span>{
+  visit(<span class="pl-s">&apos;/&apos;</span>);
+
+  andThen(<span class="hljs-function"><span class="pl-k">function</span>(<span class="hljs-params"></span>) </span>{
+    expect(find(<span class="pl-s">&apos;h2&apos;</span>).text()).to.be.empty;
+  });
+
+  visit(<span class="pl-s">&apos;/foo&apos;</span>);
+
+  andThen(<span class="hljs-function"><span class="pl-k">function</span>(<span class="hljs-params"></span>) </span>{
+    expect(find(<span class="pl-s">&apos;h2&apos;</span>).text()).to.be.equal(<span class="pl-s">&apos;this is an acceptance test&apos;</span>);
+    done();
+  });
+});
+
+<span class="pl-c">// after:</span>
+it(<span class="pl-s">&apos;can visit subroutes&apos;</span>, <span class="pl-k">async</span> <span class="hljs-function"><span class="pl-k">function</span>(<span class="hljs-params"></span>) </span>{
+  <span class="pl-k">await</span> visit(<span class="pl-s">&apos;/&apos;</span>);
+
+  expect(find(<span class="pl-s">&apos;h2&apos;</span>).text()).to.be.empty;
+
+  <span class="pl-k">await</span> visit(<span class="pl-s">&apos;/foo&apos;</span>);
+
+  expect(find(<span class="pl-s">&apos;h2&apos;</span>).text()).to.be.equal(<span class="pl-s">&apos;this is an acceptance test&apos;</span>);
+});
+</code></pre>
 <h3 id="ember-data:-async-relationships-default">Ember Data: Async Relationships Default</h3>
 <pre><code class="lang-sh">ember watson:convert-ember-data-async-false-relationships
 </code></pre>
@@ -102,7 +142,7 @@ become a dasherized string. Here&apos;s some examples:</p>
   postComments: DS.hasMany(<span class="pl-s">&apos;post-comment&apos;</span>, {<span class="pl-k">async</span>: <span class="pl-c1">true</span>})
 });
 
-<span class="pl-c">// before, using an variable or looking up on App.</span>
+<span class="pl-c">// before, using a variable or looking up on App.</span>
 <span class="pl-k">export</span> <span class="pl-k">default</span> DS.Model.extend({
   postComments: DS.hasMany(PostComment, {<span class="pl-k">async</span>: <span class="pl-c1">true</span>})
 });
@@ -166,9 +206,13 @@ and <code>ember watson:convert-ember-data-model-lookups</code>.</p>
                 </li>
                 <li class="menu-item -level-2"><a href="#replace-needs-with-injection" class="link title link-replace-needs-with-injection">Replace Needs with Injection</a>
                 </li>
+                <li class="menu-item -level-2"><a href="#remove-usages-of-ember.k" class="link title link-remove-usages-of-ember.k">Remove usages of Ember.K</a>
+                </li>
                 <li class="menu-item -level-2"><a href="#tests:-upgrade-qunit-tests" class="link title link-tests:-upgrade-qunit-tests">Tests: Upgrade QUnit Tests</a>
                 </li>
                 <li class="menu-item -level-2"><a href="#tests:-use-destroy-app-helper" class="link title link-tests:-use-destroy-app-helper">Tests: Use Destroy App Helper</a>
+                </li>
+                <li class="menu-item -level-2"><a href="#tests:-convert-andthen-style-async-tests-to-asyncawait" class="link title link-tests:-convert-andthen-style-async-tests-to-asyncawait">Tests: Convert `andThen` style async tests to `async/await`</a>
                 </li>
                 <li class="menu-item -level-2"><a href="#ember-data:-async-relationships-default" class="link title link-ember-data:-async-relationships-default">Ember Data: Async Relationships Default</a>
                 </li>
