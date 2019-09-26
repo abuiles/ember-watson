@@ -7,7 +7,8 @@
     "test": "mocha tests/**/*-test.js",
     "ci": "mocha tests/**/*-test.js",
     "watch:docs": "docpress s",
-    "deploy:docs": "docpress b && git-update-ghpages abuiles/ember-watson _docpress"
+    "deploy:docs": "docpress b && git-update-ghpages abuiles/ember-watson _docpress",
+    "release": "standard-version"
   },
   "bin": {
     "ember-watson": "./bin/ember-watson"
@@ -34,7 +35,8 @@
     "git-update-ghpages": "^1.3.0",
     "mocha": "^6.2.0",
     "mocha-jshint": "0.0.9",
-    "proxyquire": "^1.5.0"
+    "proxyquire": "^1.5.0",
+    "standard-version": "^7.0.0"
   },
   "directories": {
     "test": "tests"
