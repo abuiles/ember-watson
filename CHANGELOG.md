@@ -1,4 +1,14 @@
-# ember-watson Changelog
+# Changelog
+
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+### [0.9.2](https://github.com/abuiles/ember-watson/compare/v0.9.1...v0.9.2) (2019-09-26)
+
+
+### Bug Fixes
+
+* audit deps ([c8bc33e](https://github.com/abuiles/ember-watson/commit/c8bc33e))
+* bump packages ([#119](https://github.com/abuiles/ember-watson/issues/119)) ([8616cea](https://github.com/abuiles/ember-watson/commit/8616cea))
 
 ### 0.8.5
 
