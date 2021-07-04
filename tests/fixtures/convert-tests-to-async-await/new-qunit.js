@@ -13,3 +13,8 @@ test('selectChoose helper opens the select and selects the option with the given
   assert.notOk(find('.ember-power-select-options'), 'The selectis closed');
   assert.equal(find('.select-choose-target').textContent.trim(), 'You\'ve selected: three');
 });
+
+test('visiting helpers-testing route with arrow-andThen syntax', async function(assert) {
+  await visit('/helpers-testing');
+  assert.equal(currentURL(), '/helpers-testing');
+});

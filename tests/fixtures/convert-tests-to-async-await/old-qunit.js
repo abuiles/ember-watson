@@ -18,3 +18,8 @@ test('selectChoose helper opens the select and selects the option with the given
     assert.equal(find('.select-choose-target').textContent.trim(), 'You\'ve selected: three');
   });
 });
+
+test('visiting helpers-testing route with arrow-andThen syntax', function(assert) {
+  visit('/helpers-testing');
+  andThen(() => assert.equal(currentURL(), '/helpers-testing'));
+});
