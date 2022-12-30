@@ -33,7 +33,7 @@
     "docpress": "^0.7.6",
     "esprima-ast-equality": "0.0.4",
     "git-update-ghpages": "^1.3.0",
-    "mocha": "^6.2.0",
+    "mocha": "^10.2.0",
     "mocha-jshint": "0.0.9",
     "proxyquire": "^1.5.0",
     "standard-version": "^7.0.0"
